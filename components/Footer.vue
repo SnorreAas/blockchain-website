@@ -28,7 +28,7 @@ export default {
       padding: 120px 64px
       display: flex
       &--sosial
-        margin: 0
+        margin: 0px
         width: auto
     padding: 100px 32px
     p
