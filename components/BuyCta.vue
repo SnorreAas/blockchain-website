@@ -69,8 +69,7 @@ svg
       position: absolute
       left: 0
       right: 0
-      margin-left: auto
-      margin-right: auto
+      transform: translate(-50%, -50%)
       font-weight: bold
       font-size: 18px
       color: #0F2024
