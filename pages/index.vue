@@ -84,5 +84,5 @@ export default {
     background: #212121
 
   .Slider-wrapper
-    padding: 130px 0 80px
+    padding: 130px 0px 80px
 </style>
