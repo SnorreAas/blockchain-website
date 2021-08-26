@@ -63,22 +63,20 @@ svg
   a
     position: relative
     p
+      @media screen and (min-width: 600px)
+        display: none
+      display: block
       position: absolute
-      top: 0
-      bottom: 0
       left: 0
       right: 0
+      margin-left: auto
+      margin-right: auto
       font-weight: bold
       font-size: 18px
       color: #0F2024
       z-index: 100
 
 #gooey-button
-    p
-      font-weight: bold!important
-      font-size: 18px!important
-      color: #0F2024!important
-      z-index: 100!important
     cursor: pointer
     align-items: center
     // transition: all ease-in-out .2s
@@ -93,7 +91,9 @@ svg
     text-decoration: none
     font-weight: bold
     font-size: 18px
-    color: #0F2024
+    @media screen and (min-width: 600px)
+      color: #0F2024
+    color: #4BD67B
     border: none
     &:first-of-type
       background: #4BD67B
