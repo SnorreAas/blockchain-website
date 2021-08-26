@@ -18,9 +18,9 @@ export default {
     </svg>
     <a target="_blank" href="https://opensea.io/collection/classy-fox-club">
       <button id="gooey-button">
-          <span>
+          <p>
             Buy on Opensea
-          </span>
+          </p>
           <span class="bubbles">
               <span class="bubble"></span>
               <span class="bubble"></span>
@@ -61,6 +61,10 @@ svg
     box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
 
 #gooey-button
+    p
+      font-weight: bold!important
+      font-size: 18px!important
+      color: #0F2024!important
     cursor: pointer
     align-items: center
     // transition: all ease-in-out .2s
