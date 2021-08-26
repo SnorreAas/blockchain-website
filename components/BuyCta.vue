@@ -17,10 +17,8 @@ export default {
         </defs>
     </svg>
     <a target="_blank" href="https://opensea.io/collection/classy-fox-club">
-      <p>
-        Buy on Opensea
-      </p>
       <button id="gooey-button">
+        Buy on Opensea
           <span class="bubbles">
               <span class="bubble"></span>
               <span class="bubble"></span>
@@ -41,103 +39,92 @@ export default {
 <style lang="sass">
 $prime: #4BD67B
 $second: #0c1016
-svg
-  position: absolute
-  top: -4000px
-  left: -4000px
-
 .btn-wrapper
-  transition: all ease-in-out .2s
-  @media screen and (max-width: 700px)
-    min-width: 100%
-    margin-bottom: 16px
-  border-radius: 40px
-  &:first-of-type
-    margin-right: 20px
-  &:hover
-    cursor: pointer
-    -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
-    -moz-box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
-    box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
+  display: none
+@media screen and (min-width: 600px)
+  svg
+    position: absolute
+    top: -4000px
+    left: -4000px
 
-  a
-    position: relative
-    p
-      @media screen and (min-width: 600px)
-        display: none
-      display: block
-      position: absolute
-      left: 0
-      right: 0
-      transform: translate(-50%, -50%)
+  .btn-wrapper
+    display: block
+    transition: all ease-in-out .2s
+    @media screen and (max-width: 700px)
+      min-width: 100%
+      margin-bottom: 16px
+    border-radius: 40px
+    &:first-of-type
+      margin-right: 20px
+    &:hover
+      cursor: pointer
+      -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
+      -moz-box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
+      box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
+
+  #gooey-button
+      cursor: pointer
+      align-items: center
+      // transition: all ease-in-out .2s
+      background-color: #fff
+      height: 64px
+      @media screen and (min-width: 800px)
+        padding: 18px 40px
+      padding: 18px 20px
+      @media screen and (max-width: 700px)
+        min-width: 100%
+      border-radius: 40px
+      text-decoration: none
+      font-weight: bold
+      font-size: 18px
       font-weight: bold
       font-size: 18px
       color: #0F2024
-      z-index: 100
+      border: none
+      &:first-of-type
+        background: #4BD67B
+      filter: url('#gooey')
+      position: relative
+      background-color: $prime
+      transition: shadow 0.3s ease
 
-#gooey-button
-    cursor: pointer
-    align-items: center
-    // transition: all ease-in-out .2s
-    background-color: #fff
-    height: 64px
-    @media screen and (min-width: 800px)
-      padding: 18px 40px
-    padding: 18px 20px
-    @media screen and (max-width: 700px)
-      min-width: 100%
-    border-radius: 40px
-    text-decoration: none
-    font-weight: bold
-    font-size: 18px
-    @media screen and (min-width: 600px)
-      color: #0F2024
-    color: #4BD67B
-    border: none
-    &:first-of-type
-      background: #4BD67B
-    filter: url('#gooey')
-    position: relative
-    background-color: $prime
-    transition: shadow 0.3s ease
+      &:focus
+          outline: none
 
-    &:focus
-        outline: none
+      .bubbles
+          border-radius: 40px
+          background: transparent
+          position: absolute
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
 
-    .bubbles
-        border-radius: 40px
-        background: transparent
-        position: absolute
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
+          .bubble
+              background-color: $prime
+              border-radius: 100%
+              position: absolute
+              top: 0
+              left: 0
+              display: block
+              z-index: -1
 
-        .bubble
-            background-color: $prime
-            border-radius: 100%
-            position: absolute
-            top: 0
-            left: 0
-            display: block
-            z-index: -1
+              @for $bubble from 1 through 10
+                  &:nth-child(#{$bubble})
+                      $size: 25px
+                      left: (random(90) + 10)+px
+                      width: $size
+                      height: $size
+                      animation: move-#{$bubble} #{3 + $bubble*0.02}s infinite
+                      animation-delay: #{$bubble*0.2}s
 
-            @for $bubble from 1 through 10
-                &:nth-child(#{$bubble})
-                    $size: 25px
-                    left: (random(90) + 10)+px
-                    width: $size
-                    height: $size
-                    animation: move-#{$bubble} #{3 + $bubble*0.02}s infinite
-                    animation-delay: #{$bubble*0.2}s
-
-@for $bubble from 1 through 10
-    @keyframes move-#{$bubble}
-        0%
-            transform: translate(0, 0)
-        99%
-            transform: translate(0, -(random(80) + 50)+px)
-        100%
-            transform: translate(0, 0)
-            opacity: 0
+  @for $bubble from 1 through 10
+      @keyframes move-#{$bubble}
+          0%
+              transform: translate(0, 0)
+          99%
+              transform: translate(0, -(random(80) + 50)+px)
+          100%
+              transform: translate(0, 0)
+              opacity: 0
 </style>

@@ -33,6 +33,14 @@ export default {
     <div class="Hero--wrapper">
       <BuyCta v-if="buy" />
       <a
+        href="https://opensea.io/collection/classy-fox-club"
+        target="_blank"
+        style="background:#4BD67B"
+        class="Hero--wrapper--cta temp"
+      >
+        Buy on Opensea
+      </a>
+      <a
         v-for="(item, index) in ctas"
         :href="item.link"
         target="_blank"

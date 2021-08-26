@@ -65,10 +65,19 @@ export default {
       <div class="Hero--wrapper" style="margin-top:120px">
         <BuyCta v-if="true" />
         <a
+          href="https://opensea.io/collection/classy-fox-club"
+          target="_blank"
+          style="background:#4BD67B"
+          class="Hero--wrapper--cta temp"
+        >
+          Buy on Opensea
+        </a>
+        <a
           v-for="(item, index) in ctas"
           :href="item.link"
           target="_blank"
           :key="index"
+          style="background:#ffffff"
           class="Hero--wrapper--cta"
         >
           {{item.text}}
@@ -79,10 +88,17 @@ export default {
   </div>
 </template>
 
-<style lang="sass" scoped>
+<style lang="sass">
   .App
     background: #212121
 
   .Slider-wrapper
     padding: 130px 0px 80px
+
+  .temp
+    display: block
+    margin-bottom: 16px
+    @media screen and (min-width: 600px)
+      display: none
+
 </style>
