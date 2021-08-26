@@ -7,7 +7,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'nuxt-spa-boilerplate',
+    title: 'Classy Fox Club',
     htmlAttrs: {
       lang: 'en'
     },
@@ -22,7 +22,7 @@ export default {
   },
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: false,
+  components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
