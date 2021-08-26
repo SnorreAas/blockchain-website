@@ -18,7 +18,9 @@ export default {
     </svg>
     <a target="_blank" href="https://opensea.io/collection/classy-fox-club">
       <button id="gooey-button">
-          Buy on Opensea
+          <span>
+            Buy on Opensea
+          </span>
           <span class="bubbles">
               <span class="bubble"></span>
               <span class="bubble"></span>

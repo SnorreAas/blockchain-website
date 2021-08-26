@@ -32,8 +32,11 @@ export default {
     p
       color: #ffffff
       line-height: 1.6
-      font-size: 20px
-      margin-bottom: 40px
+      @media screen and (min-width: 600px)
+        margin-bottom: 40px
+        font-size: 20px
+      font-size: 16px
+      margin-bottom: 20px
       span
         color: #ffffff
         font-size: 30px

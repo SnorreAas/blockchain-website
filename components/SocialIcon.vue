@@ -78,6 +78,12 @@ export default {
   .connect {
     display: flex;
   }
+
+  @media screen and (max-width: 600px) {
+    .share:first-of-type {
+      margin-right: 8px;
+    }
+  }
   .share:first-of-type {
     margin-right: 16px;
   }
@@ -85,8 +91,8 @@ export default {
   .share {
     background: #ffffff;
     @media screen and (max-width: 600px) {
-      width: 35px;
-      height: 35px;
+      width: 30px;
+      height: 30px;
     }
     width: 50px;
     height: 50px;
