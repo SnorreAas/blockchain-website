@@ -20,7 +20,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  buildDir: 'dist',
+  buildDir: 'nuxt-dist',
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
