@@ -17,10 +17,10 @@ export default {
         </defs>
     </svg>
     <a target="_blank" href="https://opensea.io/collection/classy-fox-club">
+      <p>
+        Buy on Opensea
+      </p>
       <button id="gooey-button">
-          <p>
-            Buy on Opensea
-          </p>
           <span class="bubbles">
               <span class="bubble"></span>
               <span class="bubble"></span>
@@ -59,6 +59,19 @@ svg
     -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
     -moz-box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
     box-shadow: 0px 0px 30px 0px rgba(255, 255, 142, 0.31)
+
+  a
+    position: relative
+    p
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      font-weight: bold
+      font-size: 18px
+      color: #0F2024
+      z-index: 100
 
 #gooey-button
     p
