@@ -40,6 +40,7 @@ export default {
       span
         color: #ffffff
         font-size: 30px
+
       .checked
         color: #4BD67B
 </style>
