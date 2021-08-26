@@ -65,6 +65,7 @@ svg
       font-weight: bold!important
       font-size: 18px!important
       color: #0F2024!important
+      z-index: 100!important
     cursor: pointer
     align-items: center
     // transition: all ease-in-out .2s

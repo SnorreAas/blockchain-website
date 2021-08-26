@@ -7,14 +7,15 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Classy Fox Club',
+    title: 'Classy Fox Club - Exclusive NFTs',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'nuxt-spa-boilerplate' }
+      { hid: 'description', name: 'description', content: '100 Exclusive NFTs living on the Ethereum blockchain' },
+      { property: 'og:image', content: "@/assets/images/a_banner_fox.png" || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

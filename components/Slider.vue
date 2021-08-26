@@ -34,7 +34,9 @@ export default {
       object: cover
       width: 100%
       height: 100%
-      border-radius: 15px
+      @media screen and (min-width: 600px)
+        border-radius: 15px
+      border-radius: 0
 
 
 </style>

@@ -22,7 +22,7 @@ export default {
           {image: fox5},
           {image: fox8},
         ],
-        ctas: [{text: 'Join our Discord', link: 'https://twitter.com/ClassyFoxClub'}]
+        ctas: [{text: 'Join our Discord', link: 'https://discord.gg/sZjqgm3zfv'}]
       }
     }
 }
@@ -34,7 +34,7 @@ export default {
     <Hero
       :title='`WELCOME TO THE<br><span class="color">CLASSY FOX CLUB</span>`'
       subtitle="Get yourself a Fox and join The Club. Each Fox has 1 of 1 programmatically generated properties with a completely unique combination of traits. Hand drawn. Only 100 Foxes will exist in GEN 1."
-      :ctas="[{text: 'Join our Discord', link: 'https://twitter.com/ClassyFoxClub'}]"
+      :ctas="[{text: 'Join our Discord', link: 'https://discord.gg/sZjqgm3zfv'}]"
       :buy="true"
     />
     <div class="Slider-wrapper">
