@@ -1,87 +1,120 @@
 <script>
-  import fox1 from '~/assets/images/Fox_7.png'
-  import fox2 from '~/assets/images/Fox_8.png'
-  import fox3 from '~/assets/images/Fox_16.png'
-  import fox4 from '~/assets/images/Fox_17.png'
-  import fox5 from '~/assets/images/Fox_18.png'
-  import fox6 from '~/assets/images/Fox_19.png'
-  import fox7 from '~/assets/images/Fox_21.png'
-  import fox8 from '~/assets/images/Fox_30.png'
+// import fox1 from "~/assets/images/Fox_7.png";
+// import fox2 from "~/assets/images/Fox_8.png";
+// import fox3 from "~/assets/images/Fox_16.png";
+// import fox4 from "~/assets/images/Fox_17.png";
+// import fox5 from "~/assets/images/Fox_18.png";
+// import fox6 from "~/assets/images/Fox_19.png";
+// import fox7 from "~/assets/images/Fox_21.png";
+// import fox8 from "~/assets/images/Fox_30.png";
 
 export default {
-  name: 'index',
+  name: "index",
   data() {
-      return {
-        slides: [
-          {image: fox4},
-          {image: fox1},
-          {image: fox3},
-          {image: fox2},
-          {image: fox6},
-          {image: fox7},
-          {image: fox5},
-          {image: fox8},
-        ],
-        ctas: [{text: 'Join our Discord', link: 'https://discord.gg/sZjqgm3zfv'}]
-      }
-    }
-}
+    return {
+      slides: [
+        {
+          image:
+            "https://images.nightcafe.studio/jobs/BEusb6MmsB0rYxgsFh3V/BEusb6MmsB0rYxgsFh3V.jpg?tr=w-1600,c-at_max",
+        },
+        {
+          image:
+            "https://images.nightcafe.studio/jobs/gd8K5look1EP8kJXQQNb/gd8K5look1EP8kJXQQNb.jpg?tr=w-1600,c-at_max",
+        },
+        {
+          image:
+            "https://images.nightcafe.studio/jobs/RqYXtVGJEpwIV4BcLp72/RqYXtVGJEpwIV4BcLp72.jpg?tr=w-1600,c-at_max",
+        },
+        {
+          image:
+            "https://images.nightcafe.studio/jobs/oMnmCVSLA7i0bLOrniX1/oMnmCVSLA7i0bLOrniX1.jpg?tr=w-1600,c-at_max",
+        },
+        {
+          image:
+            "https://kajsotala.fi/assets/2021/07/scifi-fighting-fantasy.jpg",
+        },
+        {
+          image:
+            "https://lh3.googleusercontent.com/r7CLDm18fCaFzrwl7D0D5BQnn-0WYcrtq1DnUEFw55HCbQs10LkMJ7kj9FjirqQ5w53M3yz4AkOuV8rtlJKbJLFZX3SwAPT5uHjI=w600",
+        },
+        {
+          image:
+            "https://images.nightcafe.studio/jobs/fDLPsiB83zuY6CfyDCGx/fDLPsiB83zuY6CfyDCGx.jpg?tr=w-1600,c-at_max",
+        },
+        {
+          image: "https://pbs.twimg.com/media/FKzGezmaAAEWKRR.jpg:large",
+        },
+      ],
+      ctas: [
+        { text: "Join our Discord", link: "https://discord.gg/sZjqgm3zfv" },
+      ],
+      loading: false,
+    };
+  },
+  methods: {
+    connectWallet() {
+      this.loading = true;
+      ethereum.request({ method: "eth_requestAccounts" }).then((accounts) => {
+        const account = accounts[0];
+        if (account) {
+          this.loading = false;
+          window.location.reload();
+        }
+      });
+    },
+  },
+};
 </script>
 
 <template>
   <div class="App">
-    <Navbar title="CLASSY FOX CLUB" />
+    <Navbar title="PROJECT ONE" />
     <Hero
-      :title='`WELCOME TO THE<br><span class="color">CLASSY FOX CLUB</span>`'
-      subtitle="Get yourself a Fox and join The Club. Each Fox has 1 of 1 programmatically generated properties with a completely unique combination of traits. Hand drawn. Only 100 Foxes will exist in GEN 1."
-      :ctas="[{text: 'Join our Discord', link: 'https://discord.gg/sZjqgm3zfv'}]"
+      :title="`WELCOME DEGEN TO<br><span class=&quot;color&quot;>PROJECT ONE</span>`"
+      subtitle="In search for the next degen play? Look no further.. Project one is the perfect mint for true degenz"
       :buy="true"
-    />
+    >
+      <BuyCta :disabled="loading" @clicked="connectWallet()" />
+      <button
+        :disabled="loading"
+        @click="connectWallet()"
+        style="background: #4bd67b"
+        class="Hero--wrapper--cta temp"
+      >
+        Mint
+      </button>
+    </Hero>
     <div class="Slider-wrapper">
       <Slider :slides="slides" />
     </div>
-    <TitledContainer title="Roadmap">
-      <p>
-        <span class="checked">✓</span> First batch of Foxes created
-      </p>
-      <p>
-        <span class="checked">✓</span> Presale
-      </p>
-      <p>
-        <span class="checked">✓</span> Website launch
-      </p>
-      <p>
-        <span>✓</span> 10 new Foxes released every week
-      </p>
-      <p>
-        <span>✓</span> Twitter sales bot & Discord verification
-      </p>
-      <p>
-        <span>✓</span> Marketing campaign
-      </p>
-      <p>
-        <span>✓</span> 100% Foxes sold = Launch GEN 2 <span>🦊</span>
-      </p>
-      <div class="Hero--wrapper" style="margin-top:120px">
-        <BuyCta v-if="true" />
-        <a
-          href="https://opensea.io/collection/classy-fox-club"
-          target="_blank"
-          style="background:#4BD67B"
+    <TitledContainer title="Not a Roadmap">
+      <p><span class="checked">✓</span> Degen contract</p>
+      <p><span class="checked">✓</span> Free mint</p>
+      <p><span class="checked">✓</span> Degen tweeting</p>
+      <p><span>✓</span> Degen marketing</p>
+      <p><span>✓</span> ?</p>
+      <p><span>✓</span> ?</p>
+      <p><span>✓</span> ?</p>
+      <div class="Hero--wrapper" style="margin-top: 120px">
+        <BuyCta :disabled="loading" @clicked="connectWallet()" />
+        <button
+          :disabled="loading"
+          @click="connectWallet()"
+          style="background: #4bd67b"
           class="Hero--wrapper--cta temp"
         >
-          Buy on Opensea
-        </a>
-        <a
+          Mint
+        </button>
+        <!-- <a
           v-for="(item, index) in ctas"
           :href="item.link"
           target="_blank"
           :key="index"
-          style="background:#ffffff"
+          style="background: #ffffff"
           class="Hero--wrapper--cta"
         >
-          {{item.text}}
-        </a>
+          {{ item.text }}
+        </a> -->
       </div>
     </TitledContainer>
     <Footer />
@@ -89,16 +122,15 @@ export default {
 </template>
 
 <style lang="sass">
-  .App
-    background: #212121
+.App
+  background: #212121
 
-  .Slider-wrapper
-    padding: 130px 0px 80px
+.Slider-wrapper
+  padding: 130px 0px 80px
 
-  .temp
-    display: block
-    margin-bottom: 16px
-    @media screen and (min-width: 600px)
-      display: none
-
+.temp
+  display: block
+  margin-bottom: 16px
+  @media screen and (min-width: 600px)
+    display: none
 </style>

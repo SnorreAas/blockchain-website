@@ -9,22 +9,25 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "@nuxt/http": "^0.6.0",
     "@nuxtjs/axios": "^5.12.5",
     "core-js": "^3.6.5",
     "eslint": "^7.32.0",
+    "ganache-cli": "^6.12.2",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4",
-    "vue-carousel-3d": "^1.0.1"
+    "vue-carousel-3d": "^1.0.1",
+    "web3": "^1.7.3"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.0",
     "@nuxtjs/color-mode": "^2.0.0",
     "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/style-resources": "^1.0.0",
-    "fibers": "^5.0.0",
+    "node-sass": "^7.0.1",
     "nuxt-purgecss": "^1.0.0",
     "sass": "^1.28.0",
-    "sass-loader": "^10.0.5"
+    "sass-loader": "^10"
   }
 }

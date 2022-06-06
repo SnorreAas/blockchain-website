@@ -1,38 +1,56 @@
 <script>
 export default {
-  name: 'BuyCta'
-}
+  name: "BuyCta",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    click() {
+      this.$emit("clicked");
+    },
+  },
+};
 </script>
 
 <template>
   <div class="btn-wrapper">
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-            <filter id="gooey">
-                <!-- in="sourceGraphic" -->
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
-                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
-            </filter>
-        </defs>
+      <defs>
+        <filter id="gooey">
+          <!-- in="sourceGraphic" -->
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+          <feColorMatrix
+            in="blur"
+            type="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+            result="highContrastGraphic"
+          />
+          <feComposite
+            in="SourceGraphic"
+            in2="highContrastGraphic"
+            operator="atop"
+          />
+        </filter>
+      </defs>
     </svg>
-    <a target="_blank" href="https://opensea.io/collection/classy-fox-club">
-      <button id="gooey-button">
-        Buy on Opensea
-          <span class="bubbles">
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-              <span class="bubble"></span>
-          </span>
-      </button>
-    </a>
+    <button :disabled="disabled" @click="click()" id="gooey-button">
+      Mint here
+      <span class="bubbles">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+      </span>
+    </button>
   </div>
 </template>
 
