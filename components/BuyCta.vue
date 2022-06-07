@@ -55,7 +55,7 @@ export default {
 </template>
 
 <style lang="sass">
-$prime: #4BD67B
+$prime: #33A6EF
 $second: #0c1016
 .btn-wrapper
   display: none
@@ -100,7 +100,7 @@ $second: #0c1016
       color: #0F2024
       border: none
       &:first-of-type
-        background: #4BD67B
+        background: #33A6EF
       filter: url('#gooey')
       position: relative
       background-color: $prime

@@ -3,8 +3,8 @@ export default {
   name: "Hero",
   props: {
     title: {
-      type: String,
-      default: "",
+      type: [String, Object],
+      default: "" || {},
     },
     subtitle: {
       type: String,
@@ -25,7 +25,11 @@ export default {
 <template>
   <div class="Hero">
     <div>
-      <h1 class="Hero--title" v-html="title"></h1>
+      <h1 class="Hero--title">
+        {{ title.start }}
+        <br />
+        <span class="color">{{ title.end }}</span>
+      </h1>
     </div>
     <div>
       <p class="Hero--subtitle">{{ subtitle }}</p>
@@ -62,7 +66,7 @@ export default {
   padding: 0 32px
   max-width: 1200px
   margin: 0 auto
-  &--title
+  &--title, span
     @media screen and (min-width: 1100px)
       font-size: 100px
     font-size: 8.5vw
@@ -71,7 +75,7 @@ export default {
     font-family: "Integral",system-ui
     color: #ffffff
     .color
-      color: #4BD67B
+      color: #33A6EF
       font-family: "Integral",system-ui
   &--subtitle
     // color: #0F2024
