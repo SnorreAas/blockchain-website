@@ -21,6 +21,7 @@ export default {
   justify-content: space-between
   max-width: 1200px
   margin: 0 auto
+  background: #212121
   &--sosial
     margin: 25px auto 0
     width: 87px

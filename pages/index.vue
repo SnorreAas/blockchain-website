@@ -68,7 +68,6 @@ export default {
 
 <template>
   <div class="App">
-    <Navbar title="AI GOBLINS" />
     <Hero
       :title="{ start: 'AI GOBLINS', end: 'NFT COLLECTION' }"
       subtitle="You don't find degen playz.. They find you.."
@@ -93,8 +92,6 @@ export default {
       <p><span class="checked">✓</span> Degen tweeting</p>
       <p><span>✓</span> Degen marketing</p>
       <p><span>✓</span> ?</p>
-      <p><span>✓</span> ?</p>
-      <p><span>✓</span> ?</p>
       <div class="Hero--wrapper" style="margin-top: 120px">
         <BuyCta :disabled="loading" @clicked="connectWallet()" />
         <button
@@ -117,7 +114,6 @@ export default {
         </a> -->
       </div>
     </TitledContainer>
-    <Footer />
   </div>
 </template>
 
