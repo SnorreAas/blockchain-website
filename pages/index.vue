@@ -68,17 +68,17 @@ export default {
 
 <template>
   <div class="App">
-    <Navbar title="PROJECT ONE" />
+    <Navbar title="AI GOBLINS" />
     <Hero
-      :title="`WELCOME DEGEN TO<br><span class=&quot;color&quot;>PROJECT ONE</span>`"
-      subtitle="In search for the next degen play? Look no further.. Project one is the perfect mint for true degenz"
+      :title="{ start: 'AI GOBLINS', end: 'NFT COLLECTION' }"
+      subtitle="You don't find degen playz.. They find you.."
       :buy="true"
     >
       <BuyCta :disabled="loading" @clicked="connectWallet()" />
       <button
         :disabled="loading"
         @click="connectWallet()"
-        style="background: #4bd67b"
+        style="background: #33a6ef"
         class="Hero--wrapper--cta temp"
       >
         Mint
@@ -100,7 +100,7 @@ export default {
         <button
           :disabled="loading"
           @click="connectWallet()"
-          style="background: #4bd67b"
+          style="background: #33a6ef"
           class="Hero--wrapper--cta temp"
         >
           Mint

@@ -1,46 +1,46 @@
 <script>
 export default {
-  name: 'TitledContainer',
+  name: "TitledContainer",
   props: {
     title: {
       type: String,
-      default: ''
-    }
-  }
-}
+      default: "",
+    },
+  },
+};
 </script>
 
 <template>
   <div class="TitledContainer">
-    <h2>{{title}}</h2>
+    <h2>{{ title }}</h2>
     <slot />
   </div>
 </template>
 
 <style lang="sass">
-  .TitledContainer
-    max-width: 1200px
-    margin: 0 auto
+.TitledContainer
+  max-width: 1200px
+  margin: 0 auto
+  @media screen and (min-width: 600px)
+    padding: 64px
+  padding: 32px
+  h2
+    color: #33A6EF
+    font-size: 3em
+    font-weight: 400
+    margin-bottom: 40px
+  p
+    color: #ffffff
+    line-height: 1.6
     @media screen and (min-width: 600px)
-      padding: 64px
-    padding: 32px
-    h2
-      color: #4BD67B
-      font-size: 3em
-      font-weight: 400
       margin-bottom: 40px
-    p
+      font-size: 20px
+    font-size: 16px
+    margin-bottom: 20px
+    span
       color: #ffffff
-      line-height: 1.6
-      @media screen and (min-width: 600px)
-        margin-bottom: 40px
-        font-size: 20px
-      font-size: 16px
-      margin-bottom: 20px
-      span
-        color: #ffffff
-        font-size: 30px
+      font-size: 30px
 
-      .checked
-        color: #4BD67B
+    .checked
+      color: #33A6EF
 </style>
