@@ -2,6 +2,10 @@
 export default {
   name: "BuyCta",
   props: {
+    label: {
+      type: String,
+      default: "",
+    },
     disabled: {
       type: Boolean,
       default: false,
@@ -16,40 +20,50 @@ export default {
 </script>
 
 <template>
-  <div class="btn-wrapper">
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <defs>
-        <filter id="gooey">
-          <!-- in="sourceGraphic" -->
-          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
-          <feColorMatrix
-            in="blur"
-            type="matrix"
-            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-            result="highContrastGraphic"
-          />
-          <feComposite
-            in="SourceGraphic"
-            in2="highContrastGraphic"
-            operator="atop"
-          />
-        </filter>
-      </defs>
-    </svg>
-    <button :disabled="disabled" @click="click()" id="gooey-button">
-      Mint here
-      <span class="bubbles">
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-      </span>
+  <div>
+    <div class="btn-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="gooey">
+            <!-- in="sourceGraphic" -->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+            <feColorMatrix
+              in="blur"
+              type="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+              result="highContrastGraphic"
+            />
+            <feComposite
+              in="SourceGraphic"
+              in2="highContrastGraphic"
+              operator="atop"
+            />
+          </filter>
+        </defs>
+      </svg>
+      <button :disabled="disabled" @click="click()" id="gooey-button">
+        {{ label }}
+        <span class="bubbles">
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+        </span>
+      </button>
+    </div>
+    <button
+      :disabled="disabled"
+      @click="click()"
+      style="background: #33a6ef"
+      class="Hero--wrapper--cta temp"
+    >
+      {{ label }}
     </button>
   </div>
 </template>
@@ -57,6 +71,11 @@ export default {
 <style lang="sass">
 $prime: #33A6EF
 $second: #0c1016
+.temp
+  display: block
+  margin-bottom: 16px
+  @media screen and (min-width: 600px)
+    display: none
 .btn-wrapper
   display: none
 @media screen and (min-width: 600px)
