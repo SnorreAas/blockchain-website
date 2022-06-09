@@ -11,28 +11,43 @@ export default {
       default: "",
     },
   },
+  data() {
+    return {
+      connected: null,
+      installed: null,
+      twitter,
+    };
+  },
   computed: {
     selectedAddress() {
       if (this.connected) {
-        const user = this.$Moralis.User.current();
-        let address = user.attributes.accounts[0];
+        let address = ethereum.selectedAddress;
         let start = address.substring(0, 6);
         let end = address.substring(38, 42);
         return (start + "..." + end).toUpperCase();
       }
       return "";
     },
-    connected() {
-      return this.$store.state.connected;
-    },
   },
   methods: {
-    logOut() {
-      this.$Moralis.User.logOut().then(() => {
-        this.$store.commit("setConnected", false);
-        window.location.reload();
-      });
+    isMetaMaskInstalled() {
+      return Boolean(window.ethereum && window.ethereum.isMetaMask);
     },
+    async isMetaMaskConnected() {
+      const { ethereum } = window;
+      const accounts = await ethereum.request({ method: "eth_accounts" });
+      return accounts && accounts.length > 0;
+    },
+    async initialise(value) {
+      let test;
+      this.connected = await this.isMetaMaskConnected();
+      test = await this.isMetaMaskConnected();
+      this.installed = this.isMetaMaskInstalled();
+      this.$store.commit("setConnected", test);
+    },
+  },
+  async mounted() {
+    this.initialise();
   },
 };
 </script>
@@ -41,7 +56,7 @@ export default {
   <div class="Navbar">
     <div class="Navbar__inner">
       <div class="logo">{{ title }}</div>
-      <p v-if="connected" @click="logOut()">
+      <p v-if="connected">
         {{ selectedAddress }}
       </p>
       <p else></p>
@@ -78,9 +93,6 @@ export default {
     p
       color: white
       margin-right: 20px
-      cursor: pointer
-      &:hover
-        color: #33A6EF
     .icons
       // display: flex
       // background-image: cover

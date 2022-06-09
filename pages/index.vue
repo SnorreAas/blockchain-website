@@ -1,4 +1,5 @@
 <script>
+// const web3 = new Web3(window.ethereum);
 // import fox1 from "~/assets/images/Fox_7.png";
 // import fox2 from "~/assets/images/Fox_8.png";
 // import fox3 from "~/assets/images/Fox_16.png";
@@ -7,6 +8,7 @@
 // import fox6 from "~/assets/images/Fox_19.png";
 // import fox7 from "~/assets/images/Fox_21.png";
 // import fox8 from "~/assets/images/Fox_30.png";
+import abi from "@/assets/abi.json";
 
 export default {
   name: "index",
@@ -49,18 +51,37 @@ export default {
         { text: "Join our Discord", link: "https://discord.gg/sZjqgm3zfv" },
       ],
       loading: false,
+      contract_abi: abi,
+      currentUser: null,
     };
+  },
+  computed: {
+    connected() {
+      return this.$store.state.connected;
+    },
   },
   methods: {
     connectWallet() {
-      this.loading = true;
-      ethereum.request({ method: "eth_requestAccounts" }).then((accounts) => {
-        const account = accounts[0];
-        if (account) {
-          this.loading = false;
-          window.location.reload();
-        }
+      this.$Moralis.authenticate().then(() => {
+        this.$store.commit("setConnected", true);
       });
+    },
+    async executeMint(options) {
+      await this.$Moralis.executeFunction(options);
+    },
+    mint() {
+      let contract_address = "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943";
+      let options = {
+        contractAddress: "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943",
+        functionName: "mint",
+        _mintAmount: "1",
+        abi: this.contract_abi,
+        params: {
+          _to: "0xD5984b85016920c218ef690F0e75dd7088c32FA6",
+          _mintAmount: 1,
+        },
+      };
+      this.executeMint(options);
     },
   },
 };
@@ -73,15 +94,16 @@ export default {
       subtitle="You don't find degen playz.. They find you.."
       :buy="true"
     >
-      <BuyCta :disabled="loading" @clicked="connectWallet()" />
-      <button
-        :disabled="loading"
-        @click="connectWallet()"
-        style="background: #33a6ef"
-        class="Hero--wrapper--cta temp"
-      >
-        Mint
-      </button>
+      <div v-if="connected" class="buyCta-wrapper">
+        <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+      </div>
+      <div v-else class="buyCta-wrapper">
+        <BuyCta
+          label="Connect wallet"
+          :disabled="loading"
+          @clicked="connectWallet()"
+        />
+      </div>
     </Hero>
     <div class="Slider-wrapper">
       <Slider :slides="slides" />
@@ -93,25 +115,16 @@ export default {
       <p><span>✓</span> Degen marketing</p>
       <p><span>✓</span> ?</p>
       <div class="Hero--wrapper" style="margin-top: 120px">
-        <BuyCta :disabled="loading" @clicked="connectWallet()" />
-        <button
-          :disabled="loading"
-          @click="connectWallet()"
-          style="background: #33a6ef"
-          class="Hero--wrapper--cta temp"
-        >
-          Mint
-        </button>
-        <!-- <a
-          v-for="(item, index) in ctas"
-          :href="item.link"
-          target="_blank"
-          :key="index"
-          style="background: #ffffff"
-          class="Hero--wrapper--cta"
-        >
-          {{ item.text }}
-        </a> -->
+        <div v-if="connected" class="buyCta-wrapper">
+          <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        </div>
+        <div v-else class="buyCta-wrapper">
+          <BuyCta
+            label="Connect wallet"
+            :disabled="loading"
+            @clicked="connectWallet()"
+          />
+        </div>
       </div>
     </TitledContainer>
   </div>
@@ -124,9 +137,7 @@ export default {
 .Slider-wrapper
   padding: 130px 0px 80px
 
-.temp
-  display: block
-  margin-bottom: 16px
-  @media screen and (min-width: 600px)
-    display: none
+.buyCta-wrapper
+  @media screen and (max-width: 600px)
+    width: 100%
 </style>
