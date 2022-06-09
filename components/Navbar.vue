@@ -15,7 +15,7 @@ export default {
     selectedAddress() {
       if (this.connected) {
         const user = this.$Moralis.User.current();
-        let address = user.attributes.accounts[0];
+        let address = user.attributes.ethAddress;
         let start = address.substring(0, 6);
         let end = address.substring(38, 42);
         return (start + "..." + end).toUpperCase();
