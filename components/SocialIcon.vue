@@ -1,12 +1,12 @@
 <script>
 import twitter from "~/assets/images/t-b.png";
-import discord from "~/assets/images/lo-l.jpg";
+import opensea from "~/assets/images/opensea.png";
 export default {
   name: "SocialIcon",
   data() {
     return {
       twitter,
-      discord,
+      opensea,
     };
   },
 };
@@ -48,14 +48,14 @@ export default {
         <span class="clip">TWITTER</span>
       </a>
       <a
-        href="https://discord.gg/sZjqgm3zfv"
+        href="https://testnets.opensea.io/collection/subject-vvduim2w9g"
         target="_blank"
         class="share github"
-        :style="{ backgroundImage: 'url(' + discord + ')' }"
+        :style="{ backgroundImage: 'url(' + opensea + ')' }"
       >
         <svg role="presentation" class="svg--icon">
           <use xlink:href="#svg--github" />
-          <span class="clip">GITHUB</span>
+          <span class="clip">OPENSEA</span>
         </svg>
       </a>
     </div>
