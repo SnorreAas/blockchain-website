@@ -70,18 +70,23 @@ export default {
       await this.$Moralis.executeFunction(options);
     },
     mint() {
-      let contract_address = "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943";
-      let options = {
-        contractAddress: "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943",
-        functionName: "mint",
-        _mintAmount: "1",
-        abi: this.contract_abi,
-        params: {
-          _to: "0xD5984b85016920c218ef690F0e75dd7088c32FA6",
-          _mintAmount: 1,
-        },
-      };
-      this.executeMint(options);
+      if (connected) {
+        const user = this.$Moralis.User.current();
+        let address = user.attributes.accounts[0];
+        let contract_address = "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943";
+        let options = {
+          contractAddress: "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943",
+          functionName: "mint",
+          _mintAmount: "1",
+          abi: this.contract_abi,
+          params: {
+            _to: address,
+            _mintAmount: 1,
+          },
+        };
+        this.executeMint(options);
+      }
+      alert("You must connect your wallet to mint!");
     },
   },
 };
