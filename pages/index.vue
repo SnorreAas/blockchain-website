@@ -70,7 +70,7 @@ export default {
       await this.$Moralis.executeFunction(options);
     },
     mint() {
-      if (connected) {
+      if (this.connected) {
         const user = this.$Moralis.User.current();
         let address = user.attributes.accounts[0];
         let contract_address = "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943";
