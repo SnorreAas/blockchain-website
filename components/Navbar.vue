@@ -1,6 +1,4 @@
 <script>
-import detectEthereumProvider from "@metamask/detect-provider";
-import twitter from "~/assets/images/twitter_icon.png";
 import SocialIcon from "./SocialIcon.vue";
 export default {
   components: { SocialIcon },
@@ -40,7 +38,9 @@ export default {
 <template>
   <div class="Navbar">
     <div class="Navbar__inner">
-      <div class="logo">{{ title }}</div>
+      <div class="logo">
+        <nuxt-link to="home" class="logo-link">{{ title }}</nuxt-link>
+      </div>
       <p v-if="connected" @click="logOut()">
         {{ selectedAddress }}
       </p>
@@ -55,7 +55,7 @@ export default {
 <style lang="sass">
 .Navbar
   width: 100%
-  background: #212121
+  background: transparent
   padding: 40px 0
   &__inner
     // background: blue
@@ -66,6 +66,11 @@ export default {
     padding: 0 32px
     margin: 0 auto
     display: flex
+    .logo-link
+      text-decoration: none
+      color: #ffffff
+      font-family: "Integral",system-ui
+
     .logo
       display: block
       width: 100%

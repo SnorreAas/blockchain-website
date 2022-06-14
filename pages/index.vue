@@ -1,146 +1,71 @@
 <script>
-// const web3 = new Web3(window.ethereum);
-// import fox1 from "~/assets/images/Fox_7.png";
-// import fox2 from "~/assets/images/Fox_8.png";
-// import fox3 from "~/assets/images/Fox_16.png";
-// import fox4 from "~/assets/images/Fox_17.png";
-// import fox5 from "~/assets/images/Fox_18.png";
-// import fox6 from "~/assets/images/Fox_19.png";
-// import fox7 from "~/assets/images/Fox_21.png";
-// import fox8 from "~/assets/images/Fox_30.png";
-import abi from "@/assets/abi.json";
-
 export default {
-  name: "index",
+  name: "Home",
+  transition: {
+    name: "fade",
+    mode: "out-in",
+    duration: 1000,
+  },
   data() {
-    return {
-      slides: [
-        {
-          image:
-            "https://images.nightcafe.studio/jobs/BEusb6MmsB0rYxgsFh3V/BEusb6MmsB0rYxgsFh3V.jpg?tr=w-1600,c-at_max",
-        },
-        {
-          image:
-            "https://images.nightcafe.studio/jobs/gd8K5look1EP8kJXQQNb/gd8K5look1EP8kJXQQNb.jpg?tr=w-1600,c-at_max",
-        },
-        {
-          image:
-            "https://images.nightcafe.studio/jobs/RqYXtVGJEpwIV4BcLp72/RqYXtVGJEpwIV4BcLp72.jpg?tr=w-1600,c-at_max",
-        },
-        {
-          image:
-            "https://images.nightcafe.studio/jobs/oMnmCVSLA7i0bLOrniX1/oMnmCVSLA7i0bLOrniX1.jpg?tr=w-1600,c-at_max",
-        },
-        {
-          image:
-            "https://kajsotala.fi/assets/2021/07/scifi-fighting-fantasy.jpg",
-        },
-        {
-          image:
-            "https://lh3.googleusercontent.com/r7CLDm18fCaFzrwl7D0D5BQnn-0WYcrtq1DnUEFw55HCbQs10LkMJ7kj9FjirqQ5w53M3yz4AkOuV8rtlJKbJLFZX3SwAPT5uHjI=w600",
-        },
-        {
-          image:
-            "https://images.nightcafe.studio/jobs/fDLPsiB83zuY6CfyDCGx/fDLPsiB83zuY6CfyDCGx.jpg?tr=w-1600,c-at_max",
-        },
-        {
-          image: "https://pbs.twimg.com/media/FKzGezmaAAEWKRR.jpg:large",
-        },
-      ],
-      ctas: [
-        { text: "Join our Discord", link: "https://discord.gg/sZjqgm3zfv" },
-      ],
-      loading: false,
-      contract_abi: abi,
-      currentUser: null,
-    };
+    return {};
   },
-  computed: {
-    connected() {
-      return this.$store.state.connected;
-    },
-  },
-  methods: {
-    connectWallet() {
-      this.$Moralis.authenticate().then(() => {
-        this.$store.commit("setConnected", true);
-      });
-    },
-    async executeMint(options) {
-      await this.$Moralis.executeFunction(options);
-    },
-    mint() {
-      const user = this.$Moralis.User.current();
-      let address = user.attributes.ethAddress;
-      // console.log(address);
-      let contract_address = "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943";
-      let options = {
-        contractAddress: "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943",
-        functionName: "mint",
-        _mintAmount: "1",
-        abi: this.contract_abi,
-        params: {
-          _to: address,
-          _mintAmount: 1,
-        },
-      };
-      this.executeMint(options);
-    },
-  },
+  computed: {},
+  methods: {},
 };
 </script>
 
 <template>
-  <div class="App">
-    <Hero
-      :title="{ start: 'AI GOBLINS', end: 'NFT COLLECTION' }"
-      subtitle="You don't find degen playz.. They find you.."
-      :buy="true"
-    >
-      <div v-if="connected" class="buyCta-wrapper">
-        <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
-      </div>
-      <div v-else class="buyCta-wrapper">
-        <BuyCta
-          label="Connect wallet"
-          :disabled="loading"
-          @clicked="connectWallet()"
-        />
-      </div>
-    </Hero>
-    <div class="Slider-wrapper">
-      <Slider :slides="slides" />
+  <transition name="fade">
+    <!-- <nuxt-link to="home"> -->
+    <div class="Home">
+      <h1 class="heading">FORGOTT3N</h1>
+      <h1 class="heading">WORLDS</h1>
     </div>
-    <TitledContainer title="Not a Roadmap">
-      <p><span class="checked">✓</span> Degen contract</p>
-      <p><span class="checked">✓</span> Free mint</p>
-      <p><span class="checked">✓</span> Degen tweeting</p>
-      <p><span>✓</span> Degen marketing</p>
-      <p><span>✓</span> ?</p>
-      <div class="Hero--wrapper" style="margin-top: 120px">
-        <div v-if="connected" class="buyCta-wrapper">
-          <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
-        </div>
-        <div v-else class="buyCta-wrapper">
-          <BuyCta
-            label="Connect wallet"
-            :disabled="loading"
-            @clicked="connectWallet()"
-          />
-        </div>
-      </div>
-    </TitledContainer>
-  </div>
+    <!-- </nuxt-link> -->
+  </transition>
 </template>
 
 <style lang="sass">
-.App
-  background: #212121
+.fade-enter-active,
+.fade-leave-active
+  transition-property: opacity
+  transition-timing-function: ease-in-out
+  transition-duration: 1000ms
+.fade-enter,
+.fade-leave-to
+  opacity: 0
+.Home
+  background: radial-gradient(ellipse at bottom, #212121 0%, #212121 100%)
+  position: relative
+  height: 100vh
+  width: 100vw
+  margin: 0
+  cursor: pointer
 
-.Slider-wrapper
-  padding: 130px 0px 80px
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
 
-.buyCta-wrapper
-  @media screen and (max-width: 600px)
-    width: 100%
+.heading
+  margin: 0
+  font-family: 'Montserrat', sans-serif
+  font-size: 20vh
+  letter-spacing: 1vw
+  position: absolute
+  top: 15vh
+  left: 50%
+  transform: translateX(-50%)
+  color: white
+  background: url('https://ipfs.moralis.io:2053/ipfs/QmYTxjkHg3SQAQ6B1LaKzaVUv2Z1UphXeAk8WeWNEkNDk2/images/0000000000000000000000000000000000000000000000000000000000000007.png')
+  background-size: auto 200%
+  background-clip: text
+  text-fill-color: transparent
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  animation: shine 10s linear infinite
+  &:nth-child(2)
+    top: 50vh
+  @keyframes shine
+    from
+      background-position: center 0
+    to
+      background-position: center 200%
 </style>

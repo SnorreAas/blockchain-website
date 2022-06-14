@@ -9,7 +9,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "Project One - Degen NFTs",
+    title: "Forgott3n Worlds",
     htmlAttrs: {
       lang: "en",
     },
@@ -19,11 +19,11 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "100 Exclusive NFTs living on the Ethereum blockchain",
+        content: "World you have never seen before..",
       },
       {
         property: "og:image",
-        content: "@/assets/images/a_banner_fox.png" || "",
+        content: "" || "",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],

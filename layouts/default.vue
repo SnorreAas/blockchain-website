@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Navbar title="AI GOBLINS" />
     <Nuxt />
-    <Footer />
   </div>
 </template>
 
