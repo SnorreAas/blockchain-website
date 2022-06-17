@@ -57,6 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
+      contract_address: "0x3f3fc3E6d22F91b89D785967B86Cc435703AB7c7",
       currentUser: null,
     };
   },
@@ -77,11 +78,24 @@ export default {
     mint() {
       const user = this.$Moralis.User.current();
       let address = user.attributes.ethAddress;
-      // console.log(address);
-      let contract_address = "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943";
       let options = {
-        contractAddress: "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943",
+        contractAddress: this.contract_address,
         functionName: "mint",
+        _mintAmount: "1",
+        abi: this.contract_abi,
+        params: {
+          _to: address,
+          _mintAmount: 1,
+        },
+      };
+      this.executeMint(options);
+    },
+    mintAllowList() {
+      const user = this.$Moralis.User.current();
+      let address = user.attributes.ethAddress;
+      let options = {
+        contractAddress: this.contract_address,
+        functionName: "mintAllowList",
         _mintAmount: "1",
         abi: this.contract_abi,
         params: {
@@ -95,9 +109,9 @@ export default {
       alert("Mint is not live yet");
     },
   },
-  middleware({ redirect }) {
-    return redirect("/");
-  },
+  // middleware({ redirect }) {
+  //   return redirect("/");
+  // },
 };
 </script>
 
@@ -110,7 +124,12 @@ export default {
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
-        <BuyCta label="Mint here" :disabled="loading" @clicked="pausedMint()" />
+        <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        <BuyCta
+          label="Mint allow list here"
+          :disabled="loading"
+          @clicked="mintAllowList()"
+        />
       </div>
       <div v-else class="buyCta-wrapper">
         <BuyCta

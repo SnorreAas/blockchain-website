@@ -16,12 +16,12 @@ export default {
 
 <template>
   <transition name="fade">
-    <!-- <nuxt-link to="home"> -->
-    <div class="Home">
-      <h1 class="heading">FORGOTT3N</h1>
-      <h1 class="heading">WORLDS</h1>
-    </div>
-    <!-- </nuxt-link> -->
+    <nuxt-link to="home">
+      <div class="Home">
+        <h1 class="heading">FORGOTT3N</h1>
+        <h1 class="heading">WORLDS</h1>
+      </div>
+    </nuxt-link>
   </transition>
 </template>
 
