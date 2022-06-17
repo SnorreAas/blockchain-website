@@ -125,11 +125,11 @@ export default {
     >
       <div v-if="connected" class="buyCta-wrapper">
         <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
-        <BuyCta
+        <!-- <BuyCta
           label="Mint allow list here"
           :disabled="loading"
           @clicked="mintAllowList()"
-        />
+        /> -->
       </div>
       <div v-else class="buyCta-wrapper">
         <BuyCta
