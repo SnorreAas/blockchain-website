@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0x3f3fc3E6d22F91b89D785967B86Cc435703AB7c7",
+      contract_address: "0x855ae3BF6a64781164f4D38BB54Dd86e0A944DB6",
       currentUser: null,
     };
   },
@@ -100,7 +100,7 @@ export default {
         abi: this.contract_abi,
         params: {
           _to: address,
-          _mintAmount: 1,
+          numberOfTokens: 1,
         },
       };
       this.executeMint(options);
@@ -125,11 +125,12 @@ export default {
     >
       <div v-if="connected" class="buyCta-wrapper">
         <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
-        <!-- <BuyCta
+        <br />
+        <BuyCta
           label="Mint allow list here"
           :disabled="loading"
           @clicked="mintAllowList()"
-        /> -->
+        />
       </div>
       <div v-else class="buyCta-wrapper">
         <BuyCta
