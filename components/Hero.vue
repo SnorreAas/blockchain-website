@@ -82,7 +82,7 @@ export default {
     color: #ffffff
     line-height: 1.6
     font-size: 20px
-    // max-width: 900px
+    max-width: 620px
   &--wrapper
     margin-top: 70px
     display: flex

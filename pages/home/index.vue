@@ -75,6 +75,9 @@ export default {
     async executeMint(options) {
       await this.$Moralis.executeFunction(options);
     },
+    mintNotLive() {
+      alert("Mint not live yet.. Stay tuned!");
+    },
     mint() {
       const user = this.$Moralis.User.current();
       let address = user.attributes.ethAddress;
@@ -120,16 +123,21 @@ export default {
     <Navbar title="FORGOTT3N WORLDS" />
     <Hero
       :title="{ start: 'FORGOTT3N', end: 'WORLDS' }"
-      subtitle="A journey into the unknown and unexperienced begins. A new world, in a different time and dimension. Still, something feels similar..."
+      subtitle="A journey into the unknown begins. A new world, in a different time and dimension. Still, something feels familiar..."
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
-        <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        <!-- <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
         <br />
         <BuyCta
           label="Mint allow list here"
           :disabled="loading"
           @clicked="mintAllowList()"
+        /> -->
+        <BuyCta
+          label="Coming soon.."
+          :disabled="loading"
+          @clicked="mintNotLive()"
         />
       </div>
       <div v-else class="buyCta-wrapper">
@@ -140,6 +148,9 @@ export default {
         />
       </div>
     </Hero>
+    <!-- <div class="Tiles-wrapper">
+      <Tiles />
+    </div> -->
     <div class="Slider-wrapper">
       <Slider :slides="slides" />
     </div>
@@ -178,8 +189,14 @@ export default {
 .App
   background: #212121
 
+.Tiles-wrapper
+  // padding: 0px 100px
+  margin-top: -200px
+  @media screen and (max-width: 800px)
+    margin-top: -70px
+
 .Slider-wrapper
-  padding: 130px 0px 80px
+  padding: 80px 0px 80px
 
 .buyCta-wrapper
   @media screen and (max-width: 600px)
