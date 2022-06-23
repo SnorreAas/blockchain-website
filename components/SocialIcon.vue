@@ -37,7 +37,7 @@ export default {
     </svg>
     <div class="connect">
       <a
-        href="https://twitter.com/ClassyFoxClub"
+        href="https://twitter.com/Forgott3nWorlds"
         target="_blank"
         class="share twitter"
         :style="{ backgroundImage: 'url(' + twitter + ')' }"
@@ -47,8 +47,7 @@ export default {
         </svg>
         <span class="clip">TWITTER</span>
       </a>
-      <a
-        href="https://testnets.opensea.io/collection/subject-vvduim2w9g"
+      <!-- <a
         target="_blank"
         class="share github"
         :style="{ backgroundImage: 'url(' + opensea + ')' }"
@@ -57,7 +56,7 @@ export default {
           <use xlink:href="#svg--github" />
           <span class="clip">OPENSEA</span>
         </svg>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>

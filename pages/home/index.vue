@@ -57,6 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
+      contract_address: "0x855ae3BF6a64781164f4D38BB54Dd86e0A944DB6",
       currentUser: null,
     };
   },
@@ -74,13 +75,14 @@ export default {
     async executeMint(options) {
       await this.$Moralis.executeFunction(options);
     },
+    mintNotLive() {
+      alert("Mint not live yet.. Stay tuned!");
+    },
     mint() {
       const user = this.$Moralis.User.current();
       let address = user.attributes.ethAddress;
-      // console.log(address);
-      let contract_address = "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943";
       let options = {
-        contractAddress: "0x279380C88AF1E7eba81EBA98ebeC1fb17263c943",
+        contractAddress: this.contract_address,
         functionName: "mint",
         _mintAmount: "1",
         abi: this.contract_abi,
@@ -91,13 +93,28 @@ export default {
       };
       this.executeMint(options);
     },
+    mintAllowList() {
+      const user = this.$Moralis.User.current();
+      let address = user.attributes.ethAddress;
+      let options = {
+        contractAddress: this.contract_address,
+        functionName: "mintAllowList",
+        _mintAmount: "1",
+        abi: this.contract_abi,
+        params: {
+          _to: address,
+          numberOfTokens: 1,
+        },
+      };
+      this.executeMint(options);
+    },
     pausedMint() {
       alert("Mint is not live yet");
     },
   },
-  middleware({ redirect }) {
-    return redirect("/");
-  },
+  // middleware({ redirect }) {
+  //   return redirect("/");
+  // },
 };
 </script>
 
@@ -106,11 +123,22 @@ export default {
     <Navbar title="FORGOTT3N WORLDS" />
     <Hero
       :title="{ start: 'FORGOTT3N', end: 'WORLDS' }"
-      subtitle="Our mission is to bridge the existing gap in AI skills through an online learning platform and a marketplace of AI professionals, ML experts, data scientists, and NLP researchers where Enterprises and AI developers can hire the right experts, have access to ondemand computing resources and order pre-built and custom AI solutions."
+      subtitle="A journey into the unknown begins. A new world, in a different time and dimension. Still, something feels familiar..."
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
-        <BuyCta label="Mint here" :disabled="loading" @clicked="pausedMint()" />
+        <!-- <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        <br />
+        <BuyCta
+          label="Mint allow list here"
+          :disabled="loading"
+          @clicked="mintAllowList()"
+        /> -->
+        <BuyCta
+          label="Coming soon.."
+          :disabled="loading"
+          @clicked="mintNotLive()"
+        />
       </div>
       <div v-else class="buyCta-wrapper">
         <BuyCta
@@ -120,6 +148,9 @@ export default {
         />
       </div>
     </Hero>
+    <!-- <div class="Tiles-wrapper">
+      <Tiles />
+    </div> -->
     <div class="Slider-wrapper">
       <Slider :slides="slides" />
     </div>
@@ -158,8 +189,14 @@ export default {
 .App
   background: #212121
 
+.Tiles-wrapper
+  // padding: 0px 100px
+  margin-top: -200px
+  @media screen and (max-width: 800px)
+    margin-top: -70px
+
 .Slider-wrapper
-  padding: 130px 0px 80px
+  padding: 80px 0px 80px
 
 .buyCta-wrapper
   @media screen and (max-width: 600px)
