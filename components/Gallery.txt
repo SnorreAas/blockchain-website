@@ -1,0 +1,93 @@
+<script>
+export default {
+  name: "Gallery",
+  mounted() {
+    const observer = new IntersectionObserver(f, {
+      threshold: [0, 1],
+    });
+
+    function f(entries) {
+      for (const entry of entries) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 1) {
+          entry.target.classList.toggle("inbound", true);
+        } else {
+          entry.target.classList.toggle("inbound", false);
+        }
+      }
+    }
+
+    const itemEls = Array.from(document.querySelectorAll(".item"));
+    for (const itemEl of itemEls) observer.observe(itemEl);
+  },
+};
+</script>
+
+<template>
+  <div class="waterfall">
+    <div class="item">
+      <img
+        src="https://ipfs.moralis.io:2053/ipfs/QmYTxjkHg3SQAQ6B1LaKzaVUv2Z1UphXeAk8WeWNEkNDk2/images/0000000000000000000000000000000000000000000000000000000000000008.png"
+      />
+    </div>
+  </div>
+</template>
+
+<style lang="less">
+body {
+  display: grid;
+  place-content: center;
+  background: #111;
+}
+
+.waterfall {
+  @h:30vh, 40vh, 50vh;
+  @gcd: 10vh;
+  @width:minmax (150px, 1fr);
+
+  width: 80vw;
+  margin: 10em 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, @width);
+  grid-gap: 1em;
+  grid-auto-flow: row dense;
+  grid-auto-rows: @gcd;
+
+  .item:nth-of-type(3n + 1) {
+    grid-row: auto/span unit(extract(@h, 1) / @gcd);
+  }
+  .item:nth-of-type(3n + 2) {
+    grid-row: auto/span unit(extract(@h, 2) / @gcd);
+  }
+  .item:nth-of-type(3n + 3) {
+    grid-row: auto/span unit(extract(@h, 3) / @gcd);
+  }
+
+  .item {
+    overflow: hidden;
+    transform: rotate(-7.5deg);
+    filter: saturate(0) contrast(10) brightness(0.2);
+    transition: transform 0.2s, border 0.1s;
+    box-sizing: border-box;
+    border: 1em solid transparent;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: rotate(15deg);
+      transition: all 0.3s;
+    }
+
+    &.inbound {
+      transform: rotate(0);
+      filter: none;
+      border-bottom: 1px solid white;
+
+      & img {
+        transform: rotate(0);
+      }
+    }
+  }
+}
+</style>

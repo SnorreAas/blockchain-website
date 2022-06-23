@@ -22,7 +22,6 @@ export default {
       <h1 class="heading">WORLDS</h1>
     </div>
     <!-- </nuxt-link> -->
-    <Gallery />
   </transition>
 </template>
 
