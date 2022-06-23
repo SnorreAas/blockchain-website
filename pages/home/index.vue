@@ -120,7 +120,7 @@ export default {
     <Navbar title="FORGOTT3N WORLDS" />
     <Hero
       :title="{ start: 'FORGOTT3N', end: 'WORLDS' }"
-      subtitle="Our mission is to bridge the existing gap in AI skills through an online learning platform and a marketplace of AI professionals, ML experts, data scientists, and NLP researchers where Enterprises and AI developers can hire the right experts, have access to ondemand computing resources and order pre-built and custom AI solutions."
+      subtitle="A journey into the unknown and unexperienced begins. A new world, in a different time and dimension. Still, something feels similar..."
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
