@@ -18,8 +18,8 @@ export default {
   <transition name="fade">
     <nuxt-link to="home">
       <div class="Home">
-        <h1 class="heading">FORGOTT3N</h1>
-        <h1 class="heading">WORLDS</h1>
+        <h1 class="heading first">FORGOTT3N</h1>
+        <h1 class="heading second">WORLDS</h1>
       </div>
     </nuxt-link>
   </transition>
@@ -44,6 +44,13 @@ export default {
 
 // @import url('https://fonts.googleapis.com/css?family=Montserrat:900');
 
+.first
+    background: url('https://ipfs.moralis.io:2053/ipfs/QmYTxjkHg3SQAQ6B1LaKzaVUv2Z1UphXeAk8WeWNEkNDk2/images/0000000000000000000000000000000000000000000000000000000000000004.png')
+
+.second
+  background: url('https://ipfs.moralis.io:2053/ipfs/QmYTxjkHg3SQAQ6B1LaKzaVUv2Z1UphXeAk8WeWNEkNDk2/images/0000000000000000000000000000000000000000000000000000000000000009.png')
+
+
 .heading
   margin: 0
   font-family: 'Montserrat', sans-serif
@@ -54,7 +61,7 @@ export default {
   left: 50%
   transform: translateX(-50%)
   color: white
-  background: url('https://ipfs.moralis.io:2053/ipfs/QmYTxjkHg3SQAQ6B1LaKzaVUv2Z1UphXeAk8WeWNEkNDk2/images/0000000000000000000000000000000000000000000000000000000000000007.png')
+  // background: url('https://ipfs.moralis.io:2053/ipfs/QmYTxjkHg3SQAQ6B1LaKzaVUv2Z1UphXeAk8WeWNEkNDk2/images/0000000000000000000000000000000000000000000000000000000000000007.png')
   background-size: auto 200%
   background-clip: text
   text-fill-color: transparent
