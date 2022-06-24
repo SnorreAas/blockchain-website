@@ -6,11 +6,6 @@ export default {
     mode: "out-in",
     duration: 1000,
   },
-  data() {
-    return {};
-  },
-  computed: {},
-  methods: {},
 };
 </script>
 
@@ -20,12 +15,27 @@ export default {
       <div class="Home">
         <h1 class="heading first">FORGOTT3N</h1>
         <h1 class="heading second">WORLDS</h1>
+        <div class="youtube">
+          <iframe
+            width="1060"
+            height="615"
+            src="https://www.youtube.com/embed/4GB--JA80Cc?autoplay=1&mute=0"
+            title="Youtube Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </nuxt-link>
   </transition>
 </template>
 
 <style lang="sass">
+.youtube
+  height: 0!important
+  overflow: hidden
+  pointer-events: none
 .fade-enter-active,
 .fade-leave-active
   transition-property: opacity
