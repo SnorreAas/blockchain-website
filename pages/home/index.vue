@@ -13,43 +13,43 @@ export default {
       slides: [
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000001.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000001.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000002.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000002.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000003.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000003.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000004.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000004.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000005.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000005.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000006.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000006.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000007.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000007.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000008.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000008.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000009.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000009.png",
         },
         {
           image:
-            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000010.png",
+            "https://ipfs.moralis.io:2053/ipfs/Qmag3mQnw8QmyYiVfddzyQzVcFZbxuaMnfAS3Yenhz3We1/images/0000000000000000000000000000000000000000000000000000000000000010.png",
         },
       ],
       ctas: [
@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0x45D9944C0F4059e6EA9ACD031802D89bff0983B5",
+      contract_address: "0xEdb0b270666c3E36DCcA000DCEefca2565415C4B",
       currentUser: null,
     };
   },
@@ -127,7 +127,7 @@ export default {
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
-        <!-- <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
         <br />
         <br />
         <br />
@@ -135,7 +135,7 @@ export default {
           label="Mint allow list here"
           :disabled="loading"
           @clicked="mintAllowList()"
-        /> -->
+        />
         <BuyCta
           label="Coming soon.."
           :disabled="loading"
