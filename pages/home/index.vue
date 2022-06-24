@@ -127,7 +127,7 @@ export default {
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
-        <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        <!-- <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
         <br />
         <br />
         <br />
@@ -135,7 +135,7 @@ export default {
           label="Mint allow list here"
           :disabled="loading"
           @clicked="mintAllowList()"
-        />
+        /> -->
         <BuyCta
           label="Coming soon.."
           :disabled="loading"
