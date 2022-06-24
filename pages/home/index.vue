@@ -22,34 +22,34 @@ export default {
     return {
       slides: [
         {
-          image: fox1,
+          image: fox1 ?? "",
         },
         {
-          image: fox2,
+          image: fox2 ?? "",
         },
         {
-          image: fox3,
+          image: fox3 ?? "",
         },
         {
-          image: fox4,
+          image: fox4 ?? "",
         },
         {
-          image: fox5,
+          image: fox5 ?? "",
         },
         {
-          image: fox6,
+          image: fox6 ?? "",
         },
         {
-          image: fox7,
+          image: fox7 ?? "",
         },
         {
-          image: fox8,
+          image: fox8 ?? "",
         },
         {
-          image: fox9,
+          image: fox9 ?? "",
         },
         {
-          image: fox10,
+          image: fox10 ?? "",
         },
       ],
       ctas: [
