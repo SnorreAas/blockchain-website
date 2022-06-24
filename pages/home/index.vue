@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0x69254ad39110Ffd96adD5773cFFeae4197420E4f",
+      contract_address: "0x45D9944C0F4059e6EA9ACD031802D89bff0983B5",
       currentUser: null,
     };
   },
@@ -128,6 +128,8 @@ export default {
     >
       <div v-if="connected" class="buyCta-wrapper">
         <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        <br />
+        <br />
         <br />
         <BuyCta
           label="Mint allow list here"
