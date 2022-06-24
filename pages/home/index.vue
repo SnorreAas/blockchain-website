@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0xAF95f22Eb4f91009E61647ea550Cf37a26B8cd9E",
+      contract_address: "0xF29BcD2bc70199e419Cd745E10927ddB70C13194",
       currentUser: null,
     };
   },
