@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0x855ae3BF6a64781164f4D38BB54Dd86e0A944DB6",
+      contract_address: "0xAF95f22Eb4f91009E61647ea550Cf37a26B8cd9E",
       currentUser: null,
     };
   },
@@ -127,18 +127,18 @@ export default {
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
-        <!-- <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
+        <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
         <br />
         <BuyCta
           label="Mint allow list here"
           :disabled="loading"
           @clicked="mintAllowList()"
-        /> -->
-        <BuyCta
+        />
+        <!-- <BuyCta
           label="Coming soon.."
           :disabled="loading"
           @clicked="mintNotLive()"
-        />
+        /> -->
       </div>
       <div v-else class="buyCta-wrapper">
         <BuyCta
