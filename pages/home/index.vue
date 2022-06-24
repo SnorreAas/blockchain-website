@@ -1,15 +1,13 @@
 <script>
 // const web3 = new Web3(window.ethereum);
-import fox1 from "~/assets/images/Slider1.png";
-import fox2 from "~/assets/images/Slider2.png";
-import fox3 from "~/assets/images/Slider3.png";
-import fox4 from "~/assets/images/Slider4.png";
-import fox5 from "~/assets/images/Slider5.png";
-import fox6 from "~/assets/images/Slider6.png";
-import fox7 from "~/assets/images/Slider7.png";
-import fox8 from "~/assets/images/Slider8.png";
-import fox9 from "~/assets/images/Slider9.png";
-import fox10 from "~/assets/images/Slider10.png";
+// import fox1 from "~/assets/images/Fox_7.png";
+// import fox2 from "~/assets/images/Fox_8.png";
+// import fox3 from "~/assets/images/Fox_16.png";
+// import fox4 from "~/assets/images/Fox_17.png";
+// import fox5 from "~/assets/images/Fox_18.png";
+// import fox6 from "~/assets/images/Fox_19.png";
+// import fox7 from "~/assets/images/Fox_21.png";
+// import fox8 from "~/assets/images/Fox_30.png";
 import abi from "@/assets/abi.json";
 
 export default {
@@ -22,34 +20,44 @@ export default {
     return {
       slides: [
         {
-          image: fox1 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000001.png",
         },
         {
-          image: fox2 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000002.png",
         },
         {
-          image: fox3 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000003.png",
         },
         {
-          image: fox4 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000004.png",
         },
         {
-          image: fox5 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000005.png",
         },
         {
-          image: fox6 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000006.png",
         },
         {
-          image: fox7 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000007.png",
         },
         {
-          image: fox8 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000008.png",
         },
         {
-          image: fox9 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000009.png",
         },
         {
-          image: fox10 ?? "",
+          image:
+            "https://ipfs.moralis.io:2053/ipfs/QmexPxEcLd9eVrFyjzBZ4znh9FEePM9iazC26kq6FYv43u/images/0000000000000000000000000000000000000000000000000000000000000010.png",
         },
       ],
       ctas: [
