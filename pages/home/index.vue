@@ -1,13 +1,5 @@
 <script>
 // const web3 = new Web3(window.ethereum);
-// import fox1 from "~/assets/images/Fox_7.png";
-// import fox2 from "~/assets/images/Fox_8.png";
-// import fox3 from "~/assets/images/Fox_16.png";
-// import fox4 from "~/assets/images/Fox_17.png";
-// import fox5 from "~/assets/images/Fox_18.png";
-// import fox6 from "~/assets/images/Fox_19.png";
-// import fox7 from "~/assets/images/Fox_21.png";
-// import fox8 from "~/assets/images/Fox_30.png";
 import abi from "@/assets/abi.json";
 
 export default {
