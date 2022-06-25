@@ -120,10 +120,11 @@ export default {
 
 <template>
   <div class="App">
+    <Header />
     <Navbar title="FORGOTT3N WORLDS" />
     <Hero
       :title="{ start: 'FORGOTT3N', end: 'WORLDS' }"
-      subtitle="A journey into the unknown begins. A new world, in a different time and dimension. Still, something feels familiar..."
+      subtitle="Ⱥ ʝօմɾղҽվ ìղէօ էհҽ մղҟղօաղ ҍҽցìղʂ. Ⱥ ղҽա աօɾӀժ, ìղ ą ժìƒƒҽɾҽղէ էìʍҽ ąղժ ժìʍҽղʂìօղ. ϚէìӀӀ, ʂօʍҽէհìղց ƒҽҽӀʂ ƒąʍìӀìąɾ..."
       :buy="true"
     >
       <div v-if="connected" class="buyCta-wrapper">
@@ -189,7 +190,7 @@ export default {
 .fade-leave-to
   opacity: 0
 .App
-  background: #212121
+  background: transparent
 
 .Tiles-wrapper
   // padding: 0px 100px
@@ -199,6 +200,9 @@ export default {
 
 .Slider-wrapper
   padding: 80px 0px 80px
+  max-width: 1200px
+  margin: 0 auto
+  background: #212121
 
 .buyCta-wrapper
   @media screen and (max-width: 600px)
