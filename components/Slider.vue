@@ -19,7 +19,7 @@ export default {
   <carousel-3d
     :border="0"
     :perspective="0"
-    :display="7"
+    :display="10"
     :autoplay="true"
     :autoplayHoverPause="true"
     :loop="true"

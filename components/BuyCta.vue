@@ -75,7 +75,7 @@ $second: #0c1016
   display: block
   margin-bottom: 16px
   @media screen and (min-width: 600px)
-    display: none
+    display: block
 .btn-wrapper
   display: none
 @media screen and (min-width: 600px)
@@ -85,7 +85,7 @@ $second: #0c1016
     left: -4000px
 
   .btn-wrapper
-    display: block
+    display: none
     transition: all ease-in-out .2s
     @media screen and (max-width: 700px)
       min-width: 100%

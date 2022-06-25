@@ -19,14 +19,15 @@ export default {
   text-align: center
   align-items: center
   justify-content: space-between
-  max-width: 1200px
+  max-width: 1072px
+  opacity: 0.9
   margin: 0 auto
   background: #212121
   &--sosial
     margin: 25px auto 0
     width: 87px
   @media screen and (min-width: 600px)
-    padding: 120px 64px
+    padding: 120px 40px
     display: flex
     &--sosial
       margin: 0

@@ -99,7 +99,7 @@ export default {
       let options = {
         contractAddress: this.contract_address,
         functionName: "mintAllowList",
-        _mintAmount: "1",
+        _mintAmount: "2",
         abi: this.contract_abi,
         params: {
           _to: address,
@@ -123,7 +123,7 @@ export default {
     <Header />
     <Navbar title="FORGOTT3N WORLDS" />
     <Hero
-      :title="{ start: 'FORGOTT3N', end: 'WORLDS' }"
+      :title="{ start: 'ƑටའƓටͲͲӠហ', end: 'చටའꝈᎠϚ' }"
       subtitle="Ⱥ ʝօմɾղҽվ ìղէօ էհҽ մղҟղօաղ ҍҽցìղʂ. Ⱥ ղҽա աօɾӀժ, ìղ ą ժìƒƒҽɾҽղէ էìʍҽ ąղժ ժìʍҽղʂìօղ. ϚէìӀӀ, ʂօʍҽէհìղց ƒҽҽӀʂ ƒąʍìӀìąɾ..."
       :buy="true"
     >
@@ -142,6 +142,7 @@ export default {
           :disabled="loading"
           @clicked="mintNotLive()"
         />
+        <p><mark>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</mark></p>
       </div>
       <div v-else class="buyCta-wrapper">
         <BuyCta
@@ -151,31 +152,17 @@ export default {
         />
       </div>
     </Hero>
-    <!-- <div class="Tiles-wrapper">
-      <Tiles />
-    </div> -->
     <div class="Slider-wrapper">
+      <!-- <p>Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p> -->
       <Slider :slides="slides" />
     </div>
-    <!-- <TitledContainer title="Not a Roadmap">
-      <p><span class="checked">✓</span> Degen contract</p>
-      <p><span class="checked">✓</span> Free mint</p>
-      <p><span class="checked">✓</span> Degen tweeting</p>
-      <p><span>✓</span> Degen marketing</p>
+    <TitledContainer title="Ƕąքքҽղìղցʂ">
+      <p><span class="checked">✓</span> చҽҍʂìէҽ Ӏąմղçհ</p>
+      <p><span>✓</span> ↻օղէɾąçէ ժҽքӀօվʍҽղէ</p>
+      <p><span>✓</span> చꝈ ʍìղէ</p>
+      <p><span>✓</span> քմҍӀìç ʍìղէ</p>
       <p><span>✓</span> ?</p>
-      <div class="Hero--wrapper" style="margin-top: 120px">
-        <div v-if="connected" class="buyCta-wrapper">
-          <BuyCta label="Mint here" :disabled="loading" @clicked="mint()" />
-        </div>
-        <div v-else class="buyCta-wrapper">
-          <BuyCta
-            label="Connect wallet"
-            :disabled="loading"
-            @clicked="connectWallet()"
-          />
-        </div>
-      </div>
-    </TitledContainer> -->
+    </TitledContainer>
     <Footer />
   </div>
 </template>
@@ -193,18 +180,25 @@ export default {
   background: transparent
 
 .Tiles-wrapper
-  // padding: 0px 100px
   margin-top: -200px
   @media screen and (max-width: 800px)
     margin-top: -70px
 
 .Slider-wrapper
-  padding: 80px 0px 80px
-  max-width: 1200px
+  padding: 120px 40px 80px
   margin: 0 auto
   background: #212121
+  max-width: 1072px
+  opacity: 0.9
 
 .buyCta-wrapper
+  p
+    margin: 0 5px
+    mark
+      background: #212121
+      opacity: 0.9
+      color: #fff
+  margin-bottom: 30px
   @media screen and (max-width: 600px)
     width: 100%
 </style>

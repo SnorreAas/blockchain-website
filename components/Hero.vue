@@ -27,7 +27,6 @@ export default {
     <div>
       <h1 class="Hero--title">
         {{ title.start }}
-        <br />
         <span class="color">{{ title.end }}</span>
       </h1>
     </div>
@@ -36,31 +35,13 @@ export default {
     </div>
     <div class="Hero--wrapper">
       <slot />
-      <!-- <BuyCta v-if="buy" />
-      <a
-        href="https://opensea.io/collection/classy-fox-club"
-        target="_blank"
-        style="background: #4bd67b"
-        class="Hero--wrapper--cta temp"
-      >
-        Mint
-      </a>
-      <a
-        v-for="(item, index) in ctas"
-        :href="item.link"
-        target="_blank"
-        :key="index"
-        class="Hero--wrapper--cta"
-      >
-        {{ item.text }}
-      </a> -->
     </div>
   </div>
 </template>
 
 <style lang="sass">
 .Hero
-  background: #212121
+  background: transparent
   @media screen and (min-width: 600px)
     padding: 0 64px
   padding: 0 32px
@@ -70,13 +51,16 @@ export default {
     @media screen and (min-width: 1100px)
       font-size: 100px
     font-size: 8.5vw
+    text-transform: uppercase
     margin-bottom: 40px
+    margin-top: 40px
     line-height: 1
     font-family: "Integral",system-ui
     color: #ffffff
     .color
       color: #33A6EF
       font-family: "Integral",system-ui
+      text-transform: uppercase
   &--subtitle
     // color: #0F2024
     color: #ffffff
@@ -84,7 +68,7 @@ export default {
     font-size: 20px
     max-width: 620px
   &--wrapper
-    margin-top: 70px
+    margin-top: 100px
     display: flex
     flex-wrap: wrap
     &--cta

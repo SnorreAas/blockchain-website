@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       cssProps: {
-        backgroundImage: `url(${require("@/assets/images/bg.png")})`,
+        backgroundImage: `url(${require("@/assets/images/bg-4.png")})`,
       },
     };
   },
@@ -13,7 +13,8 @@ export default {
 
 <template>
   <div class="Header" :style="cssProps">
-    <!-- <div class="blur-filter" /> -->
+    <div class="blur-filter" />
+    <Sparkle />
     <slot />
   </div>
 </template>
@@ -33,5 +34,5 @@ export default {
   width: 100%
   height: 100%
   background: #212121
-  opacity: 0.5
+  opacity: 0.65
 </style>

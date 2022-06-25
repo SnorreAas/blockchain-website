@@ -19,11 +19,13 @@ export default {
 
 <style lang="sass">
 .TitledContainer
-  max-width: 1200px
+  max-width: 1072px
+  opacity: 0.9
+  background: #212121
   margin: 0 auto
   @media screen and (min-width: 600px)
-    padding: 64px
-  padding: 32px
+    padding: 40px
+  padding: 40px
   h2
     color: #33A6EF
     font-size: 3em
