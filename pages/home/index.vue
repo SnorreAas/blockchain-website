@@ -169,7 +169,7 @@ export default {
         <p>
           <span>ｷ</span> քմҍӀìç ʍìղէ աìӀӀ ʂէąɾէ ահҽղ ȺӀӀօա Ӏìʂէ էìʍҽ ҽ×քìɾҽʂ
         </p>
-        <p><span>ｷ</span> Ɱą× ʍìղէ ąʍօմղէ քɾ աąӀӀҽէ = Ӡ</p>
+        <p><span>ｷ</span> Ɱą× ʍìղէ ąʍօմղէ քҽɾ աąӀӀҽէ = Ӡ</p>
       </TitledContainer>
       <TitledContainer title="Ƕąքքҽղìղցʂ">
         <p>
