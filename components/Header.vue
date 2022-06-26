@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       cssProps: {
-        backgroundImage: `url(${require("@/assets/images/bg-2.png")})`,
+        backgroundImage: `url(${require("@/assets/images/bg-5.png")})`,
       },
       cssPropsConnected: {
         backgroundImage: `url(${require("@/assets/images/bg-3.png")})`,
