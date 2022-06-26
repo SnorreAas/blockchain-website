@@ -37,6 +37,7 @@ export default {
   z-index: -1
   background-repeat: no-repeat
   background-size: cover
+  transition: all 2s
 
 .blur-filter
   width: 100%

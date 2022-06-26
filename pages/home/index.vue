@@ -7,6 +7,7 @@ export default {
   transition: {
     name: "fade",
     mode: "out-in",
+    duration: 1000,
   },
   data() {
     return {
@@ -65,6 +66,9 @@ export default {
     connected() {
       return this.$store.state.connected;
     },
+    computedTransition() {
+      return this.connected && "fade";
+    },
   },
   methods: {
     connectWallet() {
@@ -119,16 +123,17 @@ export default {
 </script>
 
 <template>
-  <div class="App">
-    <Header />
-    <Navbar title="FORGOTT3N WORLDS" />
-    <Hero
-      :title="{ start: 'ƑටའƓටͲͲӠហ', end: 'చටའꝈᎠϚ' }"
-      subtitle="Ⱥ ʝօմɾղҽվ ìղէօ էհҽ մղҟղօաղ ҍҽցìղʂ. Ⱥ ղҽա աօɾӀժ, ìղ ą ժìƒƒҽɾҽղէ էìʍҽ ąղժ ժìʍҽղʂìօղ. ϚէìӀӀ, ʂօʍҽէհìղց ƒҽҽӀʂ ƒąʍìӀìąɾ..."
-      :buy="true"
-    >
-      <div v-if="connected" class="buyCta-wrapper">
-        <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
+  <transition :name="computedTransition">
+    <div class="App">
+      <Header />
+      <Navbar title="ƑටའƓටͲͲӠហ ꝈȺβϚ" />
+      <Hero
+        :title="{ start: 'ƑටའƓටͲͲӠហ', end: 'చටའꝈᎠϚ' }"
+        subtitle="Ⱥ ʝօմɾղҽվ ìղէօ էհҽ մղҟղօաղ ҍҽցìղʂ. Ⱥ ղҽա աօɾӀժ, ìղ ą ժìƒƒҽɾҽղէ էìʍҽ ąղժ ժìʍҽղʂìօղ. ϚէìӀӀ, ʂօʍҽէհìղց ƒҽҽӀʂ ƒąʍìӀìąɾ..."
+        :buy="true"
+      >
+        <div v-if="connected" class="buyCta-wrapper">
+          <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
         <br />
         <br />
         <br />
@@ -137,41 +142,52 @@ export default {
           :disabled="loading"
           @clicked="mintAllowList()"
         /> -->
-        <BuyCta
-          label="↻օʍìղց ʂօօղ.."
-          :disabled="loading"
-          @clicked="mintNotLive()"
-        />
-        <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
+          <BuyCta
+            label="↻օʍìղց ʂօօղ.."
+            :disabled="loading"
+            @clicked="mintNotLive()"
+          />
+          <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
+        </div>
+        <div v-else class="buyCta-wrapper">
+          <BuyCta
+            label="Connect wallet"
+            :disabled="loading"
+            @clicked="connectWallet()"
+          />
+        </div>
+      </Hero>
+      <div class="Slider-wrapper">
+        <!-- <p>Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p> -->
+        <Slider :slides="slides" />
       </div>
-      <div v-else class="buyCta-wrapper">
-        <BuyCta
-          label="Connect wallet"
-          :disabled="loading"
-          @clicked="connectWallet()"
-        />
-      </div>
-    </Hero>
-    <div class="Slider-wrapper">
-      <!-- <p>Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p> -->
-      <Slider :slides="slides" />
+      <TitledContainer title="įղƒօɾʍąէìօղ">
+        <p>
+          <span>ｷ</span> ７𝟕7 చօɾӀժʂ աìӀӀ ҍҽ հąղժҽժ օմէ. Ͳɾҽąէ էհҽʍ աìէհ çąɾҽ..
+        </p>
+        <p><span>ｷ</span> ȺӀӀօա Ӏìʂէ ʍìղէ աìӀӀ ҍҽ օքҽղ ƒօɾ 6 հօմɾʂ</p>
+        <p>
+          <span>ｷ</span> քմҍӀìç ʍìղէ աìӀӀ ʂէąɾէ ահҽղ ȺӀӀօա Ӏìʂէ էìʍҽ ҽ×քìɾҽʂ
+        </p>
+        <p><span>ｷ</span> Ɱą× ʍìղէ ąʍօմղէ քɾ աąӀӀҽէ = Ӡ</p>
+      </TitledContainer>
+      <TitledContainer title="Ƕąքքҽղìղցʂ">
+        <p>
+          <span
+            class="checked"
+            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            >✓</span
+          >
+          చҽҍʂìէҽ Ӏąմղçհ
+        </p>
+        <p><span>✓</span> ↻օղէɾąçէ ժҽքӀօվʍҽղէ</p>
+        <p><span>✓</span> ȺӀӀօա Ӏìʂէ ʍìղէ</p>
+        <p><span>✓</span> քմҍӀìç ʍìղէ</p>
+        <p><span>✓</span> Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p>
+      </TitledContainer>
+      <Footer />
     </div>
-    <TitledContainer title="Ƕąքքҽղìղցʂ">
-      <p>
-        <span
-          class="checked"
-          :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
-          >✓</span
-        >
-        చҽҍʂìէҽ Ӏąմղçհ
-      </p>
-      <p><span>✓</span> ↻օղէɾąçէ ժҽքӀօվʍҽղէ</p>
-      <p><span>✓</span> చꝈ ʍìղէ</p>
-      <p><span>✓</span> քմҍӀìç ʍìղէ</p>
-      <p><span>✓</span> Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p>
-    </TitledContainer>
-    <Footer />
-  </div>
+  </transition>
 </template>
 
 <style lang="sass">
