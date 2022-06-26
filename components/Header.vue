@@ -12,7 +12,7 @@ export default {
         backgroundImage: `url(${require("@/assets/images/bg-5.png")})`,
       },
       cssPropsConnected: {
-        backgroundImage: `url(${require("@/assets/images/bg-7.png")})`,
+        backgroundImage: `url(${require("@/assets/images/bg-3.png")})`,
       },
     };
   },
