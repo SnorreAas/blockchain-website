@@ -47,6 +47,7 @@ export default {
 
 
 .heading
+  transition: all 2s
   margin: 0
   font-family: 'Montserrat', sans-serif
   font-size: 20vh
