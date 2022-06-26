@@ -19,7 +19,6 @@
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4",
     "vue-carousel-3d": "^1.0.1",
-    "vue-gtag": "^2.0.1",
     "web3": "^1.7.3"
   },
   "devDependencies": {
