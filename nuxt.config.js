@@ -64,10 +64,7 @@ export default {
     "nuxt-i18n",
     "@nuxtjs/color-mode", //only necassary if color templates are included
   ],
-  plugins: [
-    { src: "~/plugins/gtm.js", mode: "client" },
-    "~/plugins/moralis.js",
-  ],
+  plugins: ["~/plugins/moralis.js"],
 
   axios: {
     browserBaseURL: "",
