@@ -9,15 +9,6 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    script: [
-      {
-        src: "https://www.googletagmanager.com/gtag/js?id=G-TZEDK8RXQK",
-        async: true,
-      },
-      {
-        src: "js/ga.js",
-      },
-    ],
     title: "Forgott3n Worlds",
     htmlAttrs: {
       lang: "en",
