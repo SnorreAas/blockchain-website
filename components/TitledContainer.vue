@@ -33,6 +33,7 @@ export default {
   padding: 40px
   h2
     color: #33A6EF
+    transition: all 3s
     font-size: 3em
     font-weight: 400
     margin-bottom: 40px
@@ -47,6 +48,7 @@ export default {
     span
       color: #ffffff
       font-size: 30px
+      transition: all 3s
 
     .checked
       color: #33A6EF

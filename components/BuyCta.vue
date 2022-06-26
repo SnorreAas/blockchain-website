@@ -79,6 +79,7 @@ $second: #0c1016
 .temp
   display: block
   margin-bottom: 16px
+  transition: all 2s
   @media screen and (min-width: 600px)
     display: block
 .btn-wrapper

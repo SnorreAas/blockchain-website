@@ -59,6 +59,7 @@ export default {
       font-size: 100px
     font-size: 8.5vw
     text-transform: uppercase
+    transition: all 3s
     margin-bottom: 80px
     @media screen and (max-width: 600px)
       margin-top: 30px
