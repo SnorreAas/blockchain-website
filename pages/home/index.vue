@@ -157,7 +157,14 @@ export default {
       <Slider :slides="slides" />
     </div>
     <TitledContainer title="Ƕąքքҽղìղցʂ">
-      <p><span class="checked">✓</span> చҽҍʂìէҽ Ӏąմղçհ</p>
+      <p>
+        <span
+          class="checked"
+          :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+          >✓</span
+        >
+        చҽҍʂìէҽ Ӏąմղçհ
+      </p>
       <p><span>✓</span> ↻օղէɾąçէ ժҽքӀօվʍҽղէ</p>
       <p><span>✓</span> చꝈ ʍìղէ</p>
       <p><span>✓</span> քմҍӀìç ʍìղէ</p>

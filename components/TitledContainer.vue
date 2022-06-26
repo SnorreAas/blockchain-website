@@ -7,12 +7,17 @@ export default {
       default: "",
     },
   },
+  computed: {
+    connected() {
+      return this.$store.state.connected;
+    },
+  },
 };
 </script>
 
 <template>
   <div class="TitledContainer">
-    <h2>{{ title }}</h2>
+    <h2 :style="{ color: connected ? '#DB1213' : '#33a6ef' }">{{ title }}</h2>
     <slot />
   </div>
 </template>

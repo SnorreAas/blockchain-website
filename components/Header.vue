@@ -1,9 +1,17 @@
 <script>
 export default {
   name: "Header",
+  computed: {
+    connected() {
+      return this.$store.state.connected;
+    },
+  },
   data() {
     return {
       cssProps: {
+        backgroundImage: `url(${require("@/assets/images/bg-2.png")})`,
+      },
+      cssPropsConnected: {
         backgroundImage: `url(${require("@/assets/images/bg-3.png")})`,
       },
     };
@@ -12,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div class="Header" :style="cssProps">
+  <div class="Header" :style="connected ? cssProps : cssPropsConnected">
     <div class="blur-filter" />
     <Sparkle />
     <slot />

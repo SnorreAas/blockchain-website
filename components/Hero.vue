@@ -14,10 +14,11 @@ export default {
       type: Array,
       default: () => [],
     },
-    // buy: {
-    //   type: Boolean,
-    //   default: false,
-    // },
+  },
+  computed: {
+    connected() {
+      return this.$store.state.connected;
+    },
   },
 };
 </script>
@@ -27,11 +28,17 @@ export default {
     <div>
       <h1 class="Hero--title">
         {{ title.start }}
-        <span class="color">{{ title.end }}</span>
+        <span
+          class="color"
+          :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+          >{{ title.end }}</span
+        >
       </h1>
     </div>
     <div>
-      <p class="Hero--subtitle">{{ subtitle }}</p>
+      <p class="Hero--subtitle">
+        {{ subtitle }}
+      </p>
     </div>
     <div class="Hero--wrapper">
       <slot />
@@ -87,7 +94,7 @@ export default {
         min-width: 100%
         text-align: center
       height: 64px
-      box-shadow: 0 4px #98905e47
+      // box-shadow: 0 4px #98905e47
       border-radius: 40px
       text-decoration: none
       font-weight: bold

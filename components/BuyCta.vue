@@ -11,6 +11,11 @@ export default {
       default: false,
     },
   },
+  computed: {
+    connected() {
+      return this.$store.state.connected;
+    },
+  },
   methods: {
     click() {
       this.$emit("clicked");
@@ -60,7 +65,7 @@ export default {
     <button
       :disabled="disabled"
       @click="click()"
-      style="background: #33a6ef"
+      :style="{ background: connected ? '#DB1213' : '#33a6ef' }"
       class="Hero--wrapper--cta temp"
     >
       {{ label }}
