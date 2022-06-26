@@ -168,7 +168,7 @@ export default {
       <p><span>✓</span> ↻օղէɾąçէ ժҽքӀօվʍҽղէ</p>
       <p><span>✓</span> చꝈ ʍìղէ</p>
       <p><span>✓</span> քմҍӀìç ʍìղէ</p>
-      <p><span>✓</span> ?</p>
+      <p><span>✓</span> Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p>
     </TitledContainer>
     <Footer />
   </div>
