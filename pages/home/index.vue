@@ -1,9 +1,8 @@
 <script>
-// const web3 = new Web3(window.ethereum);
 import abi from "@/assets/abi.json";
 
 export default {
-  name: "index",
+  name: "home",
   transition: {
     name: "fade",
     mode: "out-in",
@@ -60,6 +59,7 @@ export default {
       contract_abi: abi,
       contract_address: "0xEdb0b270666c3E36DCcA000DCEefca2565415C4B",
       currentUser: null,
+      totalMinted: 0,
     };
   },
   computed: {
@@ -71,12 +71,36 @@ export default {
     },
   },
   methods: {
+    async fetchSupply() {
+      // this.$Moralis.enableWeb3().then(async () => {
+      //   let options = {
+      //     contractAddress: this.contract_address,
+      //     function_name: "totalSupply",
+      //     abi: this.contract_abi,
+      //   };
+      //   let transaction =
+      //     this.$Moralis.Web3API.native.runContractFunction(options);
+      //   let res = await transaction;
+      //   console.log(res);
+      // });
+      // this.$Moralis.enableWeb3().then(async () => {
+      //   const options = {
+      //     chain: "eth",
+      //     address: this.contract_address,
+      //     function_name: "totalSupply",
+      //     abi: this.contract_abi,
+      //     params: {},
+      //   };
+      //   const count = await this.$Moralis.executeFunction(options);
+      //   console.log(count);
+      // });
+    },
     connectWallet() {
       this.$Moralis.authenticate().then(() => {
         this.$store.commit("setConnected", true);
       });
     },
-    async executeMint(options) {
+    async executeFunction(options) {
       await this.$Moralis.executeFunction(options);
     },
     mintNotLive() {
@@ -95,7 +119,7 @@ export default {
           _mintAmount: 1,
         },
       };
-      this.executeMint(options);
+      this.executeFunction(options);
     },
     mintAllowList() {
       const user = this.$Moralis.User.current();
@@ -110,12 +134,15 @@ export default {
           numberOfTokens: 1,
         },
       };
-      this.executeMint(options);
+      this.executeFunction(options);
     },
     pausedMint() {
       alert("Mint is not live yet");
     },
   },
+  // mounted() {
+  //   this.fetchSupply();
+  // },
   // middleware({ redirect }) {
   //   return redirect("/");
   // },
@@ -123,7 +150,7 @@ export default {
 </script>
 
 <template>
-  <transition :name="computedTransition">
+  <transition name="fade">
     <div class="App">
       <Header />
       <Navbar title="ƑටའƓටͲͲӠហ ꝈȺβϚ" />
@@ -159,12 +186,13 @@ export default {
       </Hero>
       <div class="Slider-wrapper">
         <!-- <p>Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p> -->
+        <!-- <p>Minted: {{ totalMinted }}/777</p>
+        <br />
+        <br /> -->
         <Slider :slides="slides" />
       </div>
       <TitledContainer title="įղƒօɾʍąէìօղ">
-        <p>
-          <span>ｷ</span> ７𝟕7 చօɾӀժʂ աìӀӀ ҍҽ հąղժҽժ օմէ. Ͳɾҽąէ էհҽʍ աìէհ çąɾҽ..
-        </p>
+        <p><span>ｷ</span> ７𝟕7 Ҡҽվʂ աìӀӀ ҍҽ ąʂʂìցղҽժ. Ͳɾҽąէ էհҽʍ աìէհ çąɾҽ..</p>
         <p><span>ｷ</span> ȺӀӀօա Ӏìʂէ ʍìղէ աìӀӀ ҍҽ օքҽղ ƒօɾ 6 հօմɾʂ</p>
         <p>
           <span>ｷ</span> քմҍӀìç ʍìղէ աìӀӀ ʂէąɾէ ահҽղ ȺӀӀօա Ӏìʂէ էìʍҽ ҽ×քìɾҽʂ
@@ -213,6 +241,9 @@ export default {
   background: #212121
   max-width: 1072px
   opacity: 0.9
+  p
+    display: block
+    text-align: center
 
 .buyCta-wrapper
   p
