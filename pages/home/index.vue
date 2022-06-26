@@ -142,7 +142,7 @@ export default {
           :disabled="loading"
           @clicked="mintNotLive()"
         />
-        <p><mark>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</mark></p>
+        <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
       </div>
       <div v-else class="buyCta-wrapper">
         <BuyCta
