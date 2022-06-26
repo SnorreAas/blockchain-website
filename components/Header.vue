@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       cssProps: {
-        backgroundImage: `url(${require("@/assets/images/bg-4.png")})`,
+        backgroundImage: `url(${require("@/assets/images/bg-3.png")})`,
       },
     };
   },

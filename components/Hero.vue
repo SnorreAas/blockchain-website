@@ -52,8 +52,11 @@ export default {
       font-size: 100px
     font-size: 8.5vw
     text-transform: uppercase
-    margin-bottom: 40px
-    margin-top: 40px
+    margin-bottom: 80px
+    @media screen and (max-width: 600px)
+      margin-top: 30px
+      margin-bottom: 50px
+    margin-top: 60px
     line-height: 1
     font-family: "Integral",system-ui
     color: #ffffff
@@ -68,6 +71,8 @@ export default {
     font-size: 20px
     max-width: 620px
   &--wrapper
+    @media screen and (max-width: 600px)
+      margin-top: 70px
     margin-top: 100px
     display: flex
     flex-wrap: wrap
