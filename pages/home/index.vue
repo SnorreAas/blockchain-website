@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0xEdb0b270666c3E36DCcA000DCEefca2565415C4B",
+      contract_address: "0x22692abD68f8cb63C36A0cA9ab6aa202DE7511d6",
       currentUser: null,
       totalMinted: 0,
     };
@@ -112,11 +112,11 @@ export default {
       let options = {
         contractAddress: this.contract_address,
         functionName: "mint",
-        _mintAmount: "1",
+        _mintAmount: "299",
         abi: this.contract_abi,
         params: {
           _to: address,
-          _mintAmount: 1,
+          _mintAmount: 300,
         },
       };
       this.executeFunction(options);
@@ -127,11 +127,11 @@ export default {
       let options = {
         contractAddress: this.contract_address,
         functionName: "mintAllowList",
-        _mintAmount: "2",
+        _mintAmount: "177",
         abi: this.contract_abi,
         params: {
           _to: address,
-          numberOfTokens: 1,
+          numberOfTokens: 177,
         },
       };
       this.executeFunction(options);
@@ -160,20 +160,24 @@ export default {
         :buy="true"
       >
         <div v-if="connected" class="buyCta-wrapper">
-          <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
-        <br />
-        <br />
-        <br />
-        <BuyCta
-          label="Ɱìղէ ąӀӀօա Ӏìʂէ"
-          :disabled="loading"
-          @clicked="mintAllowList()"
-        /> -->
           <BuyCta
+            label="Ɱìղէ հҽɾҽ - Patrick"
+            :disabled="loading"
+            @clicked="mint()"
+          />
+          <br />
+          <br />
+          <br />
+          <BuyCta
+            label="Ɱìղէ ąӀӀօա Ӏìʂէ - Kyrre"
+            :disabled="loading"
+            @clicked="mintAllowList()"
+          />
+          <!-- <BuyCta
             label="↻օʍìղց ʂօօղ.."
             :disabled="loading"
             @clicked="mintNotLive()"
-          />
+          /> -->
           <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
         </div>
         <div v-else class="buyCta-wrapper">
