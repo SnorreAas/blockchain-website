@@ -127,11 +127,11 @@ export default {
       let options = {
         contractAddress: this.contract_address,
         functionName: "mintAllowList",
-        _mintAmount: "2",
+        _mintAmount: "1",
         abi: this.contract_abi,
         params: {
           _to: address,
-          numberOfTokens: 2,
+          numberOfTokens: 1,
         },
       };
       this.executeFunction(options);
