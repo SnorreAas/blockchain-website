@@ -159,16 +159,16 @@ export default {
       >
         <div v-if="connected" class="buyCta-wrapper">
           <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" /> -->
-          <!-- <BuyCta
+          <BuyCta
             label="Ɱìղէ ąӀӀօա Ӏìʂէ"
             :disabled="loading"
             @clicked="mintAllowList()"
-          /> -->
-          <BuyCta
+          />
+          <!-- <BuyCta
             label="↻օʍìղց ʂօօղ.."
             :disabled="loading"
             @clicked="mintNotLive()"
-          />
+          /> -->
           <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
         </div>
         <div v-else class="buyCta-wrapper">
