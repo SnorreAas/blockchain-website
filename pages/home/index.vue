@@ -158,17 +158,17 @@ export default {
         :buy="true"
       >
         <div v-if="connected" class="buyCta-wrapper">
-          <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
+          <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" /> -->
           <!-- <BuyCta
             label="Ɱìղէ ąӀӀօա Ӏìʂէ"
             :disabled="loading"
             @clicked="mintAllowList()"
           /> -->
-          <!-- <BuyCta
+          <BuyCta
             label="↻օʍìղց ʂօօղ.."
             :disabled="loading"
             @clicked="mintNotLive()"
-          /> -->
+          />
           <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
         </div>
         <div v-else class="buyCta-wrapper">
@@ -188,7 +188,7 @@ export default {
       </div>
       <TitledContainer title="įղƒօɾʍąէìօղ">
         <p><span>ｷ</span> ７𝟕7 Ҡҽվʂ աìӀӀ ҍҽ ąʂʂìցղҽժ. Ͳɾҽąէ էհҽʍ աìէհ çąɾҽ..</p>
-        <p><span>ｷ</span> ȺӀӀօա Ӏìʂէ ʍìղէ աìӀӀ ҍҽ օքҽղ ƒօɾ 6 հօմɾʂ</p>
+        <p><span>ｷ</span> ȺӀӀօա Ӏìʂէ ʍìղէ աìӀӀ ҍҽ օքҽղ ƒօɾ 30 min</p>
         <p>
           <span>ｷ</span> քմҍӀìç ʍìղէ աìӀӀ ʂէąɾէ ահҽղ ȺӀӀօա Ӏìʂէ էìʍҽ ҽ×քìɾҽʂ
         </p>
