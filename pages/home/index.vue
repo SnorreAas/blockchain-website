@@ -158,12 +158,12 @@ export default {
         :buy="true"
       >
         <div v-if="connected" class="buyCta-wrapper">
-          <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" /> -->
-          <BuyCta
+          <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
+          <!-- <BuyCta
             label="Ɱìղէ ąӀӀօա Ӏìʂէ"
             :disabled="loading"
             @clicked="mintAllowList()"
-          />
+          /> -->
           <!-- <BuyCta
             label="↻օʍìղց ʂօօղ.."
             :disabled="loading"
