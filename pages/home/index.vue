@@ -158,7 +158,13 @@ export default {
         :buy="true"
       >
         <div v-if="connected" class="buyCta-wrapper">
-          <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
+          <a
+            href="https://opensea.io/collection/forgott3n-worlds-v2"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <BuyCta label="βմվ օղ օքҽղʂҽą" :disabled="loading" />
+          </a>
           <!-- <BuyCta
             label="Ɱìղէ ąӀӀօա Ӏìʂէ"
             :disabled="loading"
@@ -172,11 +178,13 @@ export default {
           <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
         </div>
         <div v-else class="buyCta-wrapper">
-          <BuyCta
-            label="Connect wallet"
-            :disabled="loading"
-            @clicked="connectWallet()"
-          />
+          <a
+            href="https://opensea.io/collection/forgott3n-worlds-v2"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <BuyCta label="βմվ օղ օքҽղʂҽą" :disabled="loading" />
+          </a>
         </div>
       </Hero>
       <div class="Slider-wrapper">
