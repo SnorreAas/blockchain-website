@@ -219,8 +219,22 @@ export default {
           >
           ↻օղէɾąçէ ժҽքӀօվʍҽղէ
         </p>
-        <p><span>✓</span> ȺӀӀօա Ӏìʂէ ʍìղէ</p>
-        <p><span>✓</span> քմҍӀìç ʍìղէ</p>
+        <p>
+          <span
+            class="checked"
+            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            >✓</span
+          >
+          ȺӀӀօա Ӏìʂէ ʍìղէ
+        </p>
+        <p>
+          <span
+            class="checked"
+            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            >✓</span
+          >
+          քմҍӀìç ʍìղէ
+        </p>
         <p><span>✓</span> Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p>
       </TitledContainer>
       <Footer />
