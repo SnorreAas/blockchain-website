@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0xedC9F0F584764894ec6b7d2206174bb72019bEF8",
+      contract_address: "0x36D582Ea65F98A087767028A0Ef469aDa276Ffe7",
       currentUser: null,
       totalMinted: 0,
     };
@@ -203,7 +203,14 @@ export default {
           >
           చҽҍʂìէҽ Ӏąմղçհ
         </p>
-        <p><span>✓</span> ↻օղէɾąçէ ժҽքӀօվʍҽղէ</p>
+        <p>
+          <span
+            class="checked"
+            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            >✓</span
+          >
+          ↻օղէɾąçէ ժҽքӀօվʍҽղէ
+        </p>
         <p><span>✓</span> ȺӀӀօա Ӏìʂէ ʍìղէ</p>
         <p><span>✓</span> քմҍӀìç ʍìղէ</p>
         <p><span>✓</span> Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p>
