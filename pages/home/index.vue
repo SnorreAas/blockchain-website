@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0x1bc9Af6a6FB31DCd493f845C3450fFcCf3234dE5",
+      contract_address: "0xedC9F0F584764894ec6b7d2206174bb72019bEF8",
       currentUser: null,
       totalMinted: 0,
     };
@@ -158,15 +158,12 @@ export default {
         :buy="true"
       >
         <div v-if="connected" class="buyCta-wrapper">
-          <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
-          <!-- <br />
-        <br />
-        <br /> -->
-          <!-- <BuyCta
+          <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" /> -->
+          <BuyCta
             label="Ɱìղէ ąӀӀօա Ӏìʂէ"
             :disabled="loading"
             @clicked="mintAllowList()"
-          /> -->
+          />
           <!-- <BuyCta
             label="↻օʍìղց ʂօօղ.."
             :disabled="loading"
