@@ -112,11 +112,11 @@ export default {
       let options = {
         contractAddress: this.contract_address,
         functionName: "mint",
-        _mintAmount: "299",
+        _mintAmount: "1",
         abi: this.contract_abi,
         params: {
           _to: address,
-          _mintAmount: 300,
+          _mintAmount: 1,
         },
       };
       this.executeFunction(options);
@@ -127,11 +127,11 @@ export default {
       let options = {
         contractAddress: this.contract_address,
         functionName: "mintAllowList",
-        _mintAmount: "177",
+        _mintAmount: "2",
         abi: this.contract_abi,
         params: {
           _to: address,
-          numberOfTokens: 177,
+          numberOfTokens: 2,
         },
       };
       this.executeFunction(options);
@@ -160,16 +160,12 @@ export default {
         :buy="true"
       >
         <div v-if="connected" class="buyCta-wrapper">
+          <!-- <BuyCta label="Ɱìղէ հҽɾҽ" :disabled="loading" @clicked="mint()" />
+        <br />
+        <br />
+        <br /> -->
           <BuyCta
-            label="Ɱìղէ հҽɾҽ - Patrick"
-            :disabled="loading"
-            @clicked="mint()"
-          />
-          <br />
-          <br />
-          <br />
-          <BuyCta
-            label="Ɱìղէ ąӀӀօա Ӏìʂէ - Kyrre"
+            label="Ɱìղէ ąӀӀօա Ӏìʂէ"
             :disabled="loading"
             @clicked="mintAllowList()"
           />
