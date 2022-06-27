@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0xcca1FAECF2bcb9CcfDDd173499A0d9cbd3Bd0A31",
+      contract_address: "0x1bc9Af6a6FB31DCd493f845C3450fFcCf3234dE5",
       currentUser: null,
       totalMinted: 0,
     };
@@ -127,11 +127,11 @@ export default {
       let options = {
         contractAddress: this.contract_address,
         functionName: "mintAllowList",
-        _mintAmount: "2",
+        _mintAmount: "1",
         abi: this.contract_abi,
         params: {
           _to: address,
-          numberOfTokens: 2,
+          numberOfTokens: 1,
         },
       };
       this.executeFunction(options);
