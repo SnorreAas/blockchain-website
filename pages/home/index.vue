@@ -176,16 +176,20 @@ export default {
             target="_blank"
             style="text-decoration: none"
           >
-            <BuyCta label="βմվ օղ օքҽղʂҽą" :disabled="loading" />
+            <BuyCta label="βմվ օղ Oքҽղʂҽą" :disabled="loading" />
           </a>
-          <BuyCta label="Claim here" :disabled="loading" @clicked="claim()" />
-          <BuyCta label="Ɱìղէ here" :disabled="loading" @clicked="mint()" />
+          <BuyCta
+            label="CӀąìʍ βąղղҽɾʂ հҽɾҽ"
+            :disabled="loading"
+            @clicked="claim()"
+          />
+          <!-- <BuyCta label="Ɱìղէ here" :disabled="loading" @clicked="mint()" /> -->
           <!-- <BuyCta
             label="↻օʍìղց ʂօօղ.."
             :disabled="loading"
             @clicked="mintNotLive()"
           /> -->
-          <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p>
+          <!-- <p>Ꭰօ վօմ ժąɾҽ ʂէҽք ìղէօ էհҽ մղҟղօաղ..?</p> -->
         </div>
         <div v-else class="buyCta-wrapper">
           <a
@@ -240,7 +244,7 @@ export default {
             :style="{ color: connected ? '#69C87C' : '#33a6ef' }"
             >✓</span
           >
-          ȺӀӀօա Ӏìʂէ ʍìղէ
+          Ɠҽղҽʂìʂ çօӀӀҽçէìօղ Ӏąմղçհ
         </p>
         <p>
           <span
@@ -248,7 +252,7 @@ export default {
             :style="{ color: connected ? '#69C87C' : '#33a6ef' }"
             >✓</span
           >
-          քմҍӀìç ʍìղէ
+          βąղղҽɾ ↻օӀӀҽçէìօղ ↻Ӏąìʍ
         </p>
         <p><span>✓</span> Ⱥʂ օղҽ էąӀҽ ҽղժʂ, ąղօէհҽɾ ҍҽցìղʂ</p>
       </TitledContainer>
@@ -285,6 +289,9 @@ export default {
     text-align: center
 
 .buyCta-wrapper
+  display: flex
+  @media screen and (max-width: 700px)
+    display: block
   p
     margin: 0 5px
     mark
