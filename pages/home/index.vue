@@ -57,7 +57,7 @@ export default {
       ],
       loading: false,
       contract_abi: abi,
-      contract_address: "0x36D582Ea65F98A087767028A0Ef469aDa276Ffe7",
+      contract_address: "0x83ed38Cc5cce867ee3ad27921ad1D4d33c6130c5",
       currentUser: null,
       totalMinted: 0,
     };
@@ -105,6 +105,19 @@ export default {
     },
     mintNotLive() {
       alert("Mint not live yet.. Stay tuned!");
+    },
+    claim() {
+      const user = this.$Moralis.User.current();
+      let address = user.attributes.ethAddress;
+      let options = {
+        contractAddress: this.contract_address,
+        functionName: "claim",
+        abi: this.contract_abi,
+        params: {
+          _to: address,
+        },
+      };
+      this.executeFunction(options);
     },
     mint() {
       const user = this.$Moralis.User.current();
@@ -165,11 +178,8 @@ export default {
           >
             <BuyCta label="βմվ օղ օքҽղʂҽą" :disabled="loading" />
           </a>
-          <!-- <BuyCta
-            label="Ɱìղէ ąӀӀօա Ӏìʂէ"
-            :disabled="loading"
-            @clicked="mintAllowList()"
-          /> -->
+          <BuyCta label="Claim here" :disabled="loading" @clicked="claim()" />
+          <BuyCta label="Ɱìղէ here" :disabled="loading" @clicked="mint()" />
           <!-- <BuyCta
             label="↻օʍìղց ʂօօղ.."
             :disabled="loading"
@@ -185,6 +195,11 @@ export default {
           >
             <BuyCta label="βմվ օղ օքҽղʂҽą" :disabled="loading" />
           </a>
+          <BuyCta
+            label="Connect wallet"
+            :disabled="loading"
+            @clicked="connectWallet()"
+          />
         </div>
       </Hero>
       <div class="Slider-wrapper">
@@ -206,7 +221,7 @@ export default {
         <p>
           <span
             class="checked"
-            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            :style="{ color: connected ? '#69C87C' : '#33a6ef' }"
             >✓</span
           >
           చҽҍʂìէҽ Ӏąմղçհ
@@ -214,7 +229,7 @@ export default {
         <p>
           <span
             class="checked"
-            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            :style="{ color: connected ? '#69C87C' : '#33a6ef' }"
             >✓</span
           >
           ↻օղէɾąçէ ժҽքӀօվʍҽղէ
@@ -222,7 +237,7 @@ export default {
         <p>
           <span
             class="checked"
-            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            :style="{ color: connected ? '#69C87C' : '#33a6ef' }"
             >✓</span
           >
           ȺӀӀօա Ӏìʂէ ʍìղէ
@@ -230,7 +245,7 @@ export default {
         <p>
           <span
             class="checked"
-            :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+            :style="{ color: connected ? '#69C87C' : '#33a6ef' }"
             >✓</span
           >
           քմҍӀìç ʍìղէ

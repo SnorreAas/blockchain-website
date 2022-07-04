@@ -65,7 +65,7 @@ export default {
     <button
       :disabled="disabled"
       @click="click()"
-      :style="{ background: connected ? '#DB1213' : '#33a6ef' }"
+      :style="{ background: connected ? '#69C87C' : '#33a6ef' }"
       class="Hero--wrapper--cta temp"
     >
       {{ label }}

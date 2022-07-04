@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div class="TitledContainer">
-    <h2 :style="{ color: connected ? '#DB1213' : '#33a6ef' }">{{ title }}</h2>
+    <h2 :style="{ color: connected ? '#69C87C' : '#33a6ef' }">{{ title }}</h2>
     <slot />
   </div>
 </template>

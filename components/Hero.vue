@@ -30,7 +30,7 @@ export default {
         {{ title.start }}
         <span
           class="color"
-          :style="{ color: connected ? '#DB1213' : '#33a6ef' }"
+          :style="{ color: connected ? '#69C87C' : '#33a6ef' }"
           >{{ title.end }}</span
         >
       </h1>
